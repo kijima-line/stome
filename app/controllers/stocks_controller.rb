@@ -1,5 +1,6 @@
 class StocksController < ApplicationController
   before_action :set_stock, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
 
   
   def index
@@ -48,6 +49,12 @@ class StocksController < ApplicationController
   
   def set_stock
     @stock = Stock.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
   
