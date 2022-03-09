@@ -32,9 +32,12 @@ class StocksController < ApplicationController
   else
     render :index
   end
-
-
   end
+  def show
+    @stock = Stock.find(params[:id])
+  end
+
+
 
   private
   def stock_params
