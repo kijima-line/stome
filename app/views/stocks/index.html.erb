@@ -1,4 +1,5 @@
 
 <% @stocks.each do |stocks|%>
-<p><%=stocks.name%></p>
+<p><%=stocks.name%>
+<%= link_to '削除' ,stock_path(stocks.id),method: :delete %></p>
 <%end%>

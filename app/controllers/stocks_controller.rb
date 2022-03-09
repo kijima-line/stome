@@ -9,6 +9,18 @@ class StocksController < ApplicationController
 
   def create
     Stock.create(stock_params)
+    redirect_to root_path
+
+  end
+
+  def destroy
+    stock = Stock.find(params[:id])
+  if  stock.destroy
+    redirect_to root_path
+  else
+    render :index
+  end
+    
   end
 
   private
