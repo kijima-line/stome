@@ -1,4 +1,7 @@
 class StocksController < ApplicationController
+  before_action :set_stock, only: [:edit, :show]
+
+  
   def index
     @stocks = Stock.all
   end
@@ -22,7 +25,7 @@ class StocksController < ApplicationController
   end
   end
   def edit
-    @stock = Stock.find(params[:id])
+
   end
   
   def update
@@ -34,7 +37,6 @@ class StocksController < ApplicationController
   end
   end
   def show
-    @stock = Stock.find(params[:id])
   end
 
 
@@ -42,6 +44,10 @@ class StocksController < ApplicationController
   private
   def stock_params
     params.require(:stock).permit(:name)
+  end
+  
+  def set_stock
+    @stock = Stock.find(params[:id])
   end
 
   
