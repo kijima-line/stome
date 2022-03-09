@@ -12,9 +12,12 @@ class StocksController < ApplicationController
   end
 
   def create
-    Stock.create(stock_params)
-    redirect_to root_path
-
+    @stock = Stock.new(stock_params)
+    if @stock.save
+      redirect_to "/stocks/#{@stock.id}", notice: '題名の作成が完了しました。'
+    else
+      render :new
+    end
   end
 
   def destroy

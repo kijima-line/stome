@@ -1,0 +1,2 @@
+class MeesController < ApplicationController
+end

@@ -1,3 +1,5 @@
+<%= notice %>
+
 <p><%= @stock.name %>
 <% if user_signed_in? && current_user.id == @stock.user_id %>
 <%= link_to '編集' ,edit_stock_path(@stock.id),method: :get %>
