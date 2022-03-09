@@ -40,7 +40,12 @@ class StocksController < ApplicationController
     render :index
   end
   end
+  
   def show
+    # @stock = Stock.new(stock_params)
+    @mees = @stock.mees.includes(:user)
+    @mee = Mee.new
+    
   end
 
 

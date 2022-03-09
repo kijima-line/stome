@@ -1,10 +1,25 @@
 <%= notice %>
+  <% if user_signed_in? %>
+
 
 <p><%= @stock.name %>
 <% if user_signed_in? && current_user.id == @stock.user_id %>
-<%= link_to '編集' ,edit_stock_path(@stock.id),method: :get %>
+<%= link_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
 <%= link_to '削除' ,stock_path(@stock.id),method: :delete %></p>
 <% end %>
+    <%= form_with model: [@stock, @mee], id: "comment-form" do |f| %>
+      <%= f.text_field :text , class: "comment-text"%>
+      <%= f.submit "ルーティン", class: "comment-submit" %>
+    <% end %>
+  <% end %>
+  <div id="comments">
+  <h4>＜ルーティン一覧＞</h4>
+    <% @stock.mees.each do |mee| %>
+      <div class="comment">
+        <p class="user-info"> </p>
+        <p><%= mee.text%></p>
+
+    <% end %>
 
 <a href="/users/<%= @stock.user.id %>">
 <%= @stock.user.name %>さん

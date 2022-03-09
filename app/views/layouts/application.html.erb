@@ -6,7 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
 
   <body>
@@ -14,15 +15,15 @@
         ようこそ、<%= current_user.name %>さん
             
                 <%= link_to "マイページ", "/users/#{current_user.id}" %>
-          <div class="user_nav grid-6">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-             <%= link_to "作成する", new_stock_path, class: "" %>
-          </div>
+
+            <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,method: :delete %>
+             <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
+
         <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: "" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "" %>
-          </div>
+    
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-warning" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
+ 
         <% end %>
   
     <%= yield %>
