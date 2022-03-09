@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
   
   def index
-    @stocks = Stock.all
+    @stocks = Stock.includes(:user).order("created_at DESC")
   end
   
   def new
@@ -44,7 +44,7 @@ class StocksController < ApplicationController
 
   private
   def stock_params
-    params.require(:stock).permit(:name)
+    params.require(:stock).permit(:name).merge(user_id: current_user.id)
   end
   
   def set_stock

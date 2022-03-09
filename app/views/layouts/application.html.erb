@@ -11,6 +11,9 @@
 
   <body>
         <% if user_signed_in? %>
+        ようこそ、<%= current_user.name %>さん
+            
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
           <div class="user_nav grid-6">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
              <%= link_to "投稿する", new_stock_path, class: "" %>
