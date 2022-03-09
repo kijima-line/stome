@@ -1,5 +1,7 @@
 
 <% @stocks.each do |stocks|%>
 <p><%=stocks.name%>
-<%= link_to '削除' ,stock_path(stocks.id),method: :delete %></p>
+<%= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
+<%= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+</p>
 <%end%>

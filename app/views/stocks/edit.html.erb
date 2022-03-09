@@ -1,0 +1,5 @@
+
+ <%= form_with(model: @stock, local: true) do |f| %>
+<p><%= f.text_field :name %>
+<%= f.submit "更新" %>
+<%end%>
