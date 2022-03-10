@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Stome</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Stome</title>
+  <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  
-    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
-  </head>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+          <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-<% if user_signed_in? %>
-
-  <div class="logo">
-    <h1>StoMee</h1>
-  </div>
-  <div class="list-menu">
-  
-    <ul class="list">
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,method: :delete %>
-      </li>
-      <li>
-        <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
-      </li>
-      <% else%>
+<body>
+    <div class="logo">
+      <h1>
+        <%= link_to "StoMee", root_path,class:"userList" %>
+      </h1>
+    </div>
+    <div class="list-menu">
+       
+      <ul class="list">
+        <% if user_signed_in? %>
         <li>
-          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
+          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,:method => :delete %>
+          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
         </li>
-        <li>
+        <% else%>
+          <li>
           <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-warning" %>
-        </li>
-        <% end %>
-          </ul>
-  </div>
-  <p>ようこそ、
-    <%= current_user.name %>さん</p>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
+            
+          </li>
+          <% end %>
+      </ul>
+    </div>
     <%= yield %>
-  </body>
+      <%
+=begin%>
+ <footer>
+        <p>@StoMee</p>
+      </footer> 
+<%
+=end%>
+</body>
 </html>

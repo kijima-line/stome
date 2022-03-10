@@ -4,6 +4,7 @@ class StocksController < ApplicationController
 
   
   def index
+    @mees = Mee.includes(:user)
     @stocks = Stock.includes(:user).order("created_at DESC")
   end
   

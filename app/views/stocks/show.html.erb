@@ -7,9 +7,8 @@
           <%= link_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
             <%= link_to '削除' ,stock_path(@stock.id),method: :delete %>
     </p>
-
     <%= form_with model: [@stock, @mee], id: "comment-form" do |f| %>
-      <%= f.time_select :created_at, class: 'form-control'%>
+      <%= f.time_select :created_at,{:minute_step => 10},class: ''%>
         <%= f.text_field :text , class: "comment-text"%>
 
           <%= f.submit "ルーティンを登録する", class: "comment-submit" %>
@@ -21,7 +20,7 @@
                     <div class="comment">
                       <p class="user-info"> </p>
                       <p>
-                        <%= mee.created_at%>
+                        <%= l mee.created_at%>
                           <%= mee.text%>
                       </p>
                       <% end %>

@@ -1,13 +1,23 @@
-
+<h2 class="heading06" data-en="routine">最新ルーティン</h2>
 <% @stocks.each do |stocks|%>
-<p><%=stocks.name%>
-<%= link_to '詳細', stock_path(stocks.id), method: :get %>
-<% if user_signed_in? && current_user.id == stocks.user_id %>
-<%= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-<%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
- <% end %>
-
-<%= stocks.user.name %>さん
-</p>
-<%end%>
-
+  <ul class="example">
+    <li>
+      <p>
+        <p>
+          <%= stocks.user.name %>さんの投稿</p>
+        <p>
+          <%=stocks.name%>
+            <%= link_to '詳細', stock_path(stocks.id), method: :get %>
+              <% if user_signed_in? && current_user.id == stocks.user_id %>
+                <%= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
+                  <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+        </p>
+        <% end %>
+          <% @mees.each do |mee| %>
+            <%= l mee.created_at %>
+              <%= mee.text%><br>
+                <%end%>
+      </p>
+    </li>
+    <%end%>
+  </ul>
