@@ -4,8 +4,8 @@ class StocksController < ApplicationController
 
   
   def index
-    @mees = Mee.includes(:user)
-    @stocks = Stock.includes(:user).order("created_at DESC")
+    @mees = Mee.all.includes(:user)
+    @stocks = Stock.order("created_at DESC").includes(:user)
   end
   
   def new
@@ -44,8 +44,8 @@ class StocksController < ApplicationController
   
   def show
     # @stock = Stock.new(stock_params)
-    @mees = @stock.mees.includes(:user)
     @mee = Mee.new
+    @mees = @stock.mees.includes(:user)
     
   end
 

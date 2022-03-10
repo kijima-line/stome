@@ -1,6 +1,6 @@
 <%= notice %>
   <% if user_signed_in? %>
-
+                        
     <p>
       <%= @stock.name %>
         <% if user_signed_in? && current_user.id == @stock.user_id %>
@@ -16,7 +16,7 @@
               <% end %>
                 <div id="comments">
                   <h4>＜ルーティン一覧＞</h4>
-                  <% @stock.mees.each do |mee| %>
+                  <% @mees.each do |mee| %>
                     <div class="comment">
                       <p class="user-info"> </p>
                       <p>
@@ -26,5 +26,4 @@
                       <% end %>
                         <% end %>
 
-                          <a href="/users/<%= @stock.user.id %>">
-                            <%= @stock.user.name %>さん
+

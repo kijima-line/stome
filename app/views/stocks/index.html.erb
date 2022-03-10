@@ -13,9 +13,10 @@
                   <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
         </p>
         <% end %>
-          <% @mees.each do |mee| %>
-            <%= l mee.created_at %>
-              <%= mee.text%><br>
+           <% stocks.mees.each do |m|%>
+
+            <%= l  m.created_at %><%= m.text%><br>
+        
                 <%end%>
       </p>
     </li>

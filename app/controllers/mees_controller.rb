@@ -1,9 +1,11 @@
 class MeesController < ApplicationController
+  # def index
+  #   @mees = Mee.includes(:user)
+  #   @stocks = Stock.includes(:user).order("created_at DESC")
+  # end
   def create
-    @mee = Mee.new(mee_params)
-    if @mee.save
-      redirect_to stock_path(params[:stock_id])
-    end
+    mee = Mee.create(mee_params)
+    redirect_to "/stocks/#{mee.stock.id}"  
   end
   def destroy
   #   stock = Stock.find(params[:id])
