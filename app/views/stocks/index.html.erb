@@ -4,9 +4,9 @@
 <%= link_to '詳細', stock_path(stocks.id), method: :get %>
 <% if user_signed_in? && current_user.id == stocks.user_id %>
 <%= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-<%= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+<%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
  <% end %>
-<a href="/users/<%= stocks.user.id %>">
+
 <%= stocks.user.name %>さん
 </p>
 <%end%>

@@ -11,21 +11,32 @@
   </head>
 
   <body>
-        <% if user_signed_in? %>
-        ようこそ、<%= current_user.name %>さん
-            
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+<% if user_signed_in? %>
 
-            <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,method: :delete %>
-             <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
-
-        <% else %>
-    
-            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-warning" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
- 
-        <% end %>
+  <div class="logo">
+    <h1>StoMee</h1>
+  </div>
+  <div class="list-menu">
   
+    <ul class="list">
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,method: :delete %>
+      </li>
+      <li>
+        <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
+      </li>
+      <% else%>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-warning" %>
+        </li>
+        <% end %>
+          </ul>
+  </div>
+  <p>ようこそ、
+    <%= current_user.name %>さん</p>
     <%= yield %>
   </body>
 </html>

@@ -15,3 +15,38 @@
  *= require_self
  */
  @import "bootstrap";
+ /* justify-content:flex-end; を指定 */
+ .list-menu{
+  margin-bottom: 50px;
+}
+
+
+.logo{
+/* 　//float: left;によって<logo>要素と<list-menu>要素が横並びになる */
+  margin:10px 0 0 30px;
+  float:left;
+}
+
+
+
+ul.list {
+/* //liのメニューを右に寄せる */
+display: flex;
+       /*並び順*/
+        /*
+        flex-start：左寄せ（デフォルト）
+        flex-end：右寄せ
+        center： 中央寄せ
+        space-between：残り余白の均等割り 
+        space-around：左右余白 ＋ 均等割り
+        */
+        justify-content: flex-end;
+list-style: none;
+}
+
+li {
+/* 　// liの中の高さとか、間の調整 */
+padding: 0 15px;
+margin-top:15px;
+
+}
