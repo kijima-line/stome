@@ -12,7 +12,7 @@ class MeesController < ApplicationController
      mee = @stock.mees.find(params[:id])
     if current_user.id == mee.user.id
       mee.destroy
-      redirect_to root_path
+      redirect_to request.referer
     else
       render "stocks/show"
     end
