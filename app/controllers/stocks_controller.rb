@@ -21,7 +21,7 @@ class StocksController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy    
     stock = Stock.find(params[:id])
   if  stock.destroy
     redirect_to root_path
@@ -45,7 +45,8 @@ class StocksController < ApplicationController
   def show
     # @stock = Stock.new(stock_params)
     @mee = Mee.new
-    @mees = @stock.mees.includes(:user)
+    # mees = Mee.find(params[:id])
+     @mees = @stock.mees.includes(:user)
     
   end
 

@@ -8,14 +8,15 @@ class MeesController < ApplicationController
     redirect_to "/stocks/#{mee.stock.id}"  
   end
   def destroy
-  #   stock = Stock.find(params[:id])
-  # if  stock.destroy
-  #   redirect_to root_path
-  # else
-  #   render :index
-  # end
+     @stock = Stock.find(params[:stock_id])
+     mee = @stock.mees.find(params[:id])
+    if current_user.id == mee.user.id
+      mee.destroy
+      redirect_to root_path
+    else
+      render "stocks/show"
+    end
   end
-
   private
   def mee_params
     params.require(:mee).permit(:text).merge(user_id: current_user.id, stock_id: params[:stock_id])

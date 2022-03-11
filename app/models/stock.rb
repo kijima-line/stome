@@ -1,5 +1,5 @@
 class Stock < ApplicationRecord
   validates :name, presence: true
   belongs_to :user
-  has_many :mees,dependent: :destroy
+  has_many :mees, dependent: :destroy
 end
