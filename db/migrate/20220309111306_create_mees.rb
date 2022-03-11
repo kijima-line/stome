@@ -1,9 +1,9 @@
 class CreateMees < ActiveRecord::Migration[6.0]
   def change
     create_table :mees do |t|
-      t.text :text
-      t.integer :user_id
-      t.integer :stock_id
+      t.text :text, null: false
+      t.integer :user_id, null: false
+      t.integer :stock_id, null: false
 
       t.timestamps
     end

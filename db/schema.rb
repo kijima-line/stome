@@ -13,16 +13,16 @@
 ActiveRecord::Schema.define(version: 2022_03_09_111306) do
 
   create_table "mees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text"
-    t.integer "user_id"
-    t.integer "stock_id"
+    t.text "text", null: false
+    t.integer "user_id", null: false
+    t.integer "stock_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
