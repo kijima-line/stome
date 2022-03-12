@@ -1,6 +1,4 @@
-<%= form_with(model: @mee, local: true) do |f| %>
-   <% @mees.each do |mees|%>
-     <p><%= mee.text_field :text %>
-      <%= f.submit "更新" %>
-          <%end%>
-            <%end%>
+<%= form_with model: [@stock,Mee] do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>

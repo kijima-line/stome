@@ -16,6 +16,7 @@
  */
  @import "bootstrap";
 
+
  .example li{
 
   float:left;
@@ -30,7 +31,8 @@
  /* justify-content:flex-end; を指定 */
  
  body {
-  /* color: #ffc107; */
+   
+  font-family: 'Caveat', cursive;
 }
  
 
@@ -85,6 +87,8 @@ margin-top:15px;
 
 /* 見出し */
 .heading06 {
+  
+  color: rgb(150, 144, 112);
   background:linear-gradient(-45deg, #fff, #ffc107);
 	position: relative;
 	padding-top: 70px;
@@ -99,7 +103,12 @@ margin-top:15px;
 	z-index: 2;
 }
 
+h1 {
+  padding-left: 30px;
+  background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
+}
 .heading06::before {
+  
 	content: attr(data-en);
 	position: absolute;
 	top: 5px;

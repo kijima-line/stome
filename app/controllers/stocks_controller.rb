@@ -15,7 +15,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     if @stock.save
-      redirect_to "/stocks/#{@stock.id}", notice: '題名の作成が完了しました。'
+      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトルが作成完了しました。'
     else
       render :new
     end
@@ -24,7 +24,7 @@ class StocksController < ApplicationController
   def destroy    
     stock = Stock.find(params[:id])
   if  stock.destroy
-    redirect_to root_path
+    redirect_to root_path,notice: '削除しました。'
   else
     render :index
   end
@@ -43,10 +43,11 @@ class StocksController < ApplicationController
   end
   
   def show
-    # @stock = Stock.new(stock_params)
-    @mee = Mee.new
+    # @stock = Stock.new
+    @stock = Stock.find(params[:id])
     # mees = Mee.find(params[:id])
      @mees = @stock.mees.includes(:user)
+     @mee = Mee.new
     
   end
 

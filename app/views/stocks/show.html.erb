@@ -1,12 +1,11 @@
 <%= notice %>
   <% if user_signed_in? %>
-    <p>
-      <%= @stock.name %>
+    <%= @stock.name %>
         <% if user_signed_in? && current_user.id == @stock.user_id %>
-          <%= link_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
-            <%= link_to '削除' ,stock_path(@stock.id),method: :delete %>
-    </p>
-    <%= form_with model: [@stock, @mee], id: "comment-form" do |f| %>
+          <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
+            <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>
+
+    <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
       <%= f.time_select :created_at,{:minute_step => 5}%>
         <%= f.text_field :text , class: "comment-text"%>
 
@@ -22,7 +21,8 @@
                         <%= l mee.created_at%>
                           <%= mee.text%>
                           <% if user_signed_in? && current_user.id == @stock.user_id %>
-                          <%=button_to "削除",stock_mee_path(@stock,mee.id), method: :delete %>
+                          <%#= button_to '編集' ,edit_stock_mee_path(@stock),method: :get %>
+                          <%= button_to "削除",stock_mee_path(@stock,mee.id), method: :delete %>
                             <% end %>
                       </p>
                       <% end %>
