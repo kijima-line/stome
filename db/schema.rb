@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_111306) do
     t.text "text", null: false
     t.integer "user_id", null: false
     t.integer "stock_id", null: false
+    t.time "published_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

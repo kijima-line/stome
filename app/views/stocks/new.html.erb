@@ -1,5 +1,5 @@
    <%= form_with(model: @stock, local: true) do |f| %>
-      <%= f.text_field :name, placeholder: "name" %>
-      <%= f.submit "SEND" %>
+      <%= f.text_field :name, placeholder: "タイトル" %>
+      <%= f.text_field :"hoge", placeholder: "概要" %>
+      <%= f.submit "登録する" %>
     <% end %>
-    <hr>

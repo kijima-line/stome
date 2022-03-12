@@ -4,7 +4,8 @@ class StocksController < ApplicationController
 
   
   def index
-    @mees = Mee.all.includes(:user)
+    @mees = Mee.order("published_at ASC").includes(:user)
+    
     @stocks = Stock.order("created_at DESC").includes(:user)
   end
   
@@ -46,7 +47,7 @@ class StocksController < ApplicationController
     # @stock = Stock.new
     @stock = Stock.find(params[:id])
     # mees = Mee.find(params[:id])
-     @mees = @stock.mees.includes(:user)
+     @mees = @stock.mees.order("published_at ASC").includes(:user)
      @mee = Mee.new
     
   end

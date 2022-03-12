@@ -35,6 +35,6 @@ class MeesController < ApplicationController
 
   private
   def mee_params
-    params.require(:mee).permit(:text).merge(user_id: current_user.id, stock_id: params[:stock_id])
+    params.require(:mee).permit(:text,:published_at).merge(user_id: current_user.id, stock_id: params[:stock_id])
   end
 end

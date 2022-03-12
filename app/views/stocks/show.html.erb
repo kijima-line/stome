@@ -1,12 +1,12 @@
 <%= notice %>
   <% if user_signed_in? %>
-    <%= @stock.name %>
+    <p><%= @stock.name %>
         <% if user_signed_in? && current_user.id == @stock.user_id %>
           <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
-            <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>
+            <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %></p>
 
     <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
-      <%= f.time_select :created_at,{:minute_step => 5}%>
+      <%= f.time_select :published_at,{:minute_step => 5}%>
         <%= f.text_field :text , class: "comment-text"%>
 
           <%= f.submit "ルーティンを登録する", class: "comment-submit" %>
@@ -18,7 +18,7 @@
                     <div class="comment">
                       <p class="user-info"> </p>
                       <p>
-                        <%= l mee.created_at%>
+                        <%= l mee.published_at%>
                           <%= mee.text%>
                           <% if user_signed_in? && current_user.id == @stock.user_id %>
                           <%#= button_to '編集' ,edit_stock_mee_path(@stock),method: :get %>
