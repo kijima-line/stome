@@ -1,5 +1,6 @@
 <%= notice %>
-  <% if user_signed_in? %>
+  <%# if user_signed_in? %>
+  
     <p><%= @stock.name %>
         <% if user_signed_in? && current_user.id == @stock.user_id %>
           <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
@@ -13,7 +14,7 @@
             <% end %>
               <% end %>
                 <div id="comments">
-                  <h4>＜ルーティン一覧＞</h4>
+                  <h4>ルーティン</h4>
                   <% @mees.each do |mee| %>
                     <div class="comment">
                       <p class="user-info"> </p>
@@ -24,6 +25,8 @@
                           <%#= button_to '編集' ,edit_stock_mee_path(@stock),method: :get %>
                           <%= button_to "削除",stock_mee_path(@stock,mee.id), method: :delete %>
                             <% end %>
+                            <% end %>
+                            
                       </p>
-                      <% end %>
-                        <% end %>
+     
+                 
