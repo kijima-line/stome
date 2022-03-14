@@ -14,7 +14,7 @@ class MeesController < ApplicationController
     redirect_to "/stocks/#{mee.stock.id}"  
   end
   def destroy
-     @stock = Stock.find(params[:stock_id])
+     stock = Stock.find(params[:stock_id])
      mee = @stock.mees.find(params[:id])
     if current_user.id == mee.user.id
       mee.destroy
@@ -26,14 +26,13 @@ class MeesController < ApplicationController
     def edit
       @mee = Mee.find(params[:id])
       stock = @mee.stock
+    end
 
       # @mee   = @stock.mees.(params[:id]) 
       # @stock = Stock.find(params[:id])
-     
-    end
     def update
-      mee = Mee.find(params[:id])
-      mee.update(mee_params)
+      # mee = Mee.find(params[:id])
+      # mee.update(mee_params)
     end
 
   private
