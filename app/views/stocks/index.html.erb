@@ -1,33 +1,23 @@
 <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
-<div class="notice"><%= notice %></div>
+<div class="notice">
+  <%= notice %>
+</div>
 <h2 class="heading06" data-en="routine">最新ルーティン</h2>
-
-<%
-=begin%>
- ようこそ<%= link_to "#{current_user.name}", user_path(current_user.id) %>さん 
-<%
-=end%>
-<% @stocks.each do |stocks|%>
-  <ul class="example">
-    <li>
-   
+      <% @stocks.each do |stocks|%>
+<div class="inline-block_test">
+            <%= stocks.user.name %>さんの投稿
+              <%= link_to '詳細', stock_path(stocks.id) %><br> <br> <span><%=stocks.title%></span><br><br>
+                <% if user_signed_in? && current_user.id == stocks.user_id %>
+                  <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
+                    <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+                      <% end %>
+                        <% stocks.mees.each do |m|%>
+                          <%= l m.published_at %> 
+                            <%= m.text%><br>
+                              <%end%>
+                              </div>
   
-          <%= stocks.user.name %>さんの投稿 　<%= link_to '詳細', stock_path(stocks.id) %><br>
-         <br> 
-       
-              <span><%=stocks.title%></span><br><br>
-            
-              <% if user_signed_in? && current_user.id == stocks.user_id %>
-                <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-                  <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
-  
-        <% end %>
-           <% stocks.mees.each do |m|%>
+          <%end%>
 
-            <%= l m.published_at %>  　<%= m.text%><br>
-        
-                <%end%>
 
-    </li>
-    <%end%>
-  </ul>
+

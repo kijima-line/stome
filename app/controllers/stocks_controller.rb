@@ -4,8 +4,8 @@ class StocksController < ApplicationController
 
   
   def index
-    @stocks = Stock.order("created_at DESC").includes(:user)
-    @mees = Mee.order("published_at ASC")
+    @stocks = Stock.includes(:user).order("created_at DESC")
+    @mees = Mee.includes(:user).order("published_at ASC")
 
     # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
 
