@@ -10,7 +10,6 @@ RSpec.describe Stock, type: :model do
       it 'タイトルが投稿できる場合' do
         expect(@stock).to be_valid
       end
-
     end
     context '投稿ができない場合' do
     

@@ -13,9 +13,11 @@
               <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
                 <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>
         </p>
+        <%= render 'shared/error_messages', model: @mee %>   
         <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
           <%# 要素 終わり%>
             <%# 要素 始まり%>
+
               <%= f.time_select :published_at,{:minute_step => 5}%>
                 <%= f.text_field :text , class: "comment-text"%>
                   <%= f.submit "ルーティンを登録する", class: "comment-submit" %>
