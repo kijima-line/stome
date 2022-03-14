@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="logo">
       <h1>
         <%= link_to "StoMee", root_path,class:"userList" %>
@@ -33,12 +34,16 @@
           <% end %>
       </ul>
     </div>
+
+
+
     <%= yield %>
-      <%
+
+ <%
 =begin%>
  <footer>
         <p>@StoMee</p>
-      </footer> 
+      </footer>  
 <%
 =end%>
 </body>

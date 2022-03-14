@@ -1,32 +1,37 @@
-<%= notice %>
-  <%# if user_signed_in? %>
-  
-    <p><%= @stock.name %>
-        <% if user_signed_in? && current_user.id == @stock.user_id %>
-          <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
-            <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %></p>
+<%#タイトル登録後フラッシュ %>
+  <%= notice %>
+    <%#タイトル登録後フラッシュ %>
+      <%# 要素　始まり %>
+        <p>
+          <%= @stock.name %>
+            <% if user_signed_in? && current_user.id == @stock.user_id %>
+              <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
+                <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>
+        </p>
+        <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
+          <%# 要素 終わり%>
+            <%# 要素 始まり%>
+              <%= f.time_select :published_at,{:minute_step => 5}%>
+                <%= f.text_field :text , class: "comment-text"%>
+                  <%= f.submit "ルーティンを登録する", class: "comment-submit" %>
+                    <% end %>
+                      <%# 要素終わり %>
+                        <% end %>
 
-    <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
-      <%= f.time_select :published_at,{:minute_step => 5}%>
-        <%= f.text_field :text , class: "comment-text"%>
+                          <%# 要素 始まり%>
+                            <div id="comments">
+                              <h2 class="heading06" data-en="routine">ルーティン</h2>
+                              <% @mees.each do |mees| %>
+                                <div class="comment">
+                                  <p class="user-info"> </p>
+                                  <p>
+                                    <%= l mees.published_at%>
+                                      <%= mees.text%>
+                                        <% if user_signed_in? && current_user.id == @stock.user_id %>
+                                          <%= button_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
+                                            <%= button_to "削除",stock_mee_path(@stock,mees.id), method: :delete %>
+                                              <% end %>
+                                                <%# 要素 終わり%>
+                                                  <% end %>
 
-          <%= f.submit "ルーティンを登録する", class: "comment-submit" %>
-            <% end %>
-              <% end %>
-                <div id="comments">
-                  <h4>ルーティン</h4>
-                  <% @mees.each do |mee| %>
-                    <div class="comment">
-                      <p class="user-info"> </p>
-                      <p>
-                        <%= l mee.published_at%>
-                          <%= mee.text%>
-                          <% if user_signed_in? && current_user.id == @stock.user_id %>
-                          <%#= button_to '編集' ,edit_stock_mee_path(@stock),method: :get %>
-                          <%= button_to "削除",stock_mee_path(@stock,mee.id), method: :delete %>
-                            <% end %>
-                            <% end %>
-                            
-                      </p>
-     
-                 
+                                  </p>

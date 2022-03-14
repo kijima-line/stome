@@ -14,12 +14,21 @@
 
  */
  @import "bootstrap"; 
-
+ 
+ 
+/* 共通 */
+ body {
+   
+  background:linear-gradient(-45deg, #fff, #FFF7E0);
+  font-family: 'Caveat', cursive;
+}
+ 
  .box {
   width: 90vw;
   max-width: 800px;
 }
-
+/* 共通 */
+/* 一覧リスト */
  .example li{
     /* かど指定 */
   border-top-left-radius: 3px;
@@ -30,30 +39,28 @@
   font-family: "Kokoro";
   padding: 20px;                      /* 余白指定 */
   box-shadow: 2px 2px 2px 2px #bbb;   /* 影指定 */
-  width: auto;                       /* 幅指定 */
-  height: auto;                      /* 高さ指定 */
+  width: 500px;                       /* 幅指定 */
+  height: auto;                      /* 縦指定 */
   // background:linear-gradient(-45deg, #64b3f4, #ffc107);
-  background: linear-gradient(-45deg, rgba(255, 0, 200, 0.8), rgba(246, 255, 0, .8)) fixed, url(http//www.webcreatorbox.com/sample/images/bg-cherrybrossam.jpg) fixed;
+  background: linear-gradient(-45deg, rgba(255, 0, 200, 0.8), rgba(246, 255, 0, .8)) fixed, 
+  url(https://drive.google.com/uc?export=download&id=1dnKDB99FFFFMLY3ymGeyEIvgPrYVUILk) fixed;
   background-size: cover;
   color: #eee;
-  float:left;
+  float:right;  /* 右、左指定 */
   list-style: none;
   font-size: 23px;
   margin: 30px;
-  
+
 
 }
 
 .list-menu{
   margin-bottom: 50px;
 }
+/* 一覧リスト */
+
 
  /* justify-content:flex-end; を指定 */
- 
- body {
-  background:linear-gradient(-45deg, #fff, #FFF7E0);
-  font-family: 'Caveat', cursive;
-}
  
 
 
@@ -97,15 +104,19 @@ margin-top:15px;
 
 }
 
-/* footer{
-  width: 100%;
-  background-color: #ffc107;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0;
-} */
+//  footer{
+//   width: 100%;
+//   background-color: #ffc107;
+//   color: #fff;
+//   text-align: center;
+//   padding: 30px 0;
+// }
 
 /* 見出し */
+h1 {
+  padding-left: 30px;
+  background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
+}
 .heading06 {
   font-family: "Kokoro";
   color: rgb(150, 144, 112);
@@ -123,10 +134,7 @@ margin-top:15px;
 	z-index: 2;
 }
 
-h1 {
-  padding-left: 30px;
-  background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
-}
+
 .heading06::before {
   
 	content: attr(data-en);
