@@ -24,15 +24,17 @@ class MeesController < ApplicationController
     end
   end
     def edit
-      @mee = Mee.find(params[:id])
-      stock = @mee.stock
+      @stock = Stock.find(params[:stock_id])
+      @mee   = @stock.mees.find(params[:id])
     end
-
-      # @mee   = @stock.mees.(params[:id]) 
-      # @stock = Stock.find(params[:id])
     def update
-      # mee = Mee.find(params[:id])
-      # mee.update(mee_params)
+      @stock = Stock.find(params[:stock_id])
+      @mees   = @stock.mees.find(params[:id])
+     if @mees.update(mee_params)
+      redirect_to root_path
+      else
+      redirect_to :edit
+      end
     end
 
   private

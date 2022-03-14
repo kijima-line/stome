@@ -31,7 +31,7 @@
                                     <%= l mees.published_at%>
                                       <%= mees.text%>
                                         <% if user_signed_in? && current_user.id == @stock.user_id %>
-                                          <%#=調整中 button_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
+                                          <%= button_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
                                             <%= button_to "削除",stock_mee_path(@stock,mees.id), method: :delete %>
                                               <% end %>
                                                 <%# 要素 終わり%>

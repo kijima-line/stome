@@ -1,4 +1,4 @@
-<%= form_with model: [@mee.stock]  do |f| %>
+<%= form_with model: [@stock,@mee]  do |f| %>
   <%= f.time_select :published_at,{:minute_step => 5}%>
   <%= f.text_field :text %>
   <%= f.submit %>
