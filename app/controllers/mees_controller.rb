@@ -15,7 +15,7 @@ class MeesController < ApplicationController
   end
   def destroy
      stock = Stock.find(params[:stock_id])
-     mee = @stock.mees.find(params[:id])
+     mee = stock.mees.find(params[:id])
     if current_user.id == mee.user.id
       mee.destroy
       redirect_to request.referer

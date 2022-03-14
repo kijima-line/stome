@@ -8,7 +8,7 @@
                             <div id="comments">
                               <h2 class="heading06" data-en="routine">ルーティン</h2>
                                       <p>
-          <%= @stock.name %>
+          <%= @stock.title %>
             <% if user_signed_in? && current_user.id == @stock.user_id %>
               <%= button_to 'タイトル編集' ,edit_stock_path(@stock.id),method: :get %>
                 <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>

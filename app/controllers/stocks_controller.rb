@@ -4,9 +4,11 @@ class StocksController < ApplicationController
 
   
   def index
-    @mees = Mee.order("published_at ASC").includes(:user)
-    
     @stocks = Stock.order("created_at DESC").includes(:user)
+    @mees = Mee.order("published_at ASC")
+
+    # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
+
   end
   
   def new
@@ -16,7 +18,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     if @stock.save
-      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトルが作成完了しました。'
+      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトル作成しました。'
     else
       render :new
     end
@@ -37,7 +39,7 @@ class StocksController < ApplicationController
   def update
     stock = Stock.find(params[:id])
   if stock.update(stock_params)
-    redirect_to root_path
+    redirect_to root_path, notice: 'ルーティンのタイトルを更新しました。'
   else
     render :index
   end
@@ -56,7 +58,7 @@ class StocksController < ApplicationController
 
   private
   def stock_params
-    params.require(:stock).permit(:name).merge(user_id: current_user.id)
+    params.require(:stock).permit(:title).merge(user_id: current_user.id)
   end
   
   def set_stock

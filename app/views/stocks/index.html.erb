@@ -15,7 +15,7 @@
           <%= stocks.user.name %>さんの投稿 　<%= link_to '詳細', stock_path(stocks.id) %><br>
          <br> 
        
-              <span><%=stocks.name%></span><br><br>
+              <span><%=stocks.title%></span><br><br>
             
               <% if user_signed_in? && current_user.id == stocks.user_id %>
                 <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
