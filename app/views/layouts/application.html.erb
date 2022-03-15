@@ -22,13 +22,13 @@
       <ul class="list">
         <% if user_signed_in? %>
         <li>
-          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-warning" ,:method => :get %>
-          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-warning" %>
+          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,:method => :get %>
+          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" %>
         </li>
         <% else%>
           <li>
-          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-warning" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-warning" %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
             
           </li>
           <% end %>
@@ -39,12 +39,14 @@
 
     <%= yield %>
 
+
  <%
 =begin%>
  <footer>
         <p>@StoMee</p>
-      </footer>  
+      </footer>   
 <%
 =end%>
+
 </body>
 </html>

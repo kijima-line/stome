@@ -20,7 +20,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     if @stock.save
-      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトル作成しました。'
+      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトルを作成しました。'
     else
       render :new
     end
@@ -41,9 +41,9 @@ class StocksController < ApplicationController
   def update
     stock = Stock.find(params[:id])
   if stock.update(stock_params)
-    redirect_to root_path, notice: 'ルーティンのタイトルを更新しました。'
+    redirect_to action: :show
   else
-    render :index
+    redirect_to root_path
   end
   end
   

@@ -41,12 +41,12 @@
      /* かど指定 */
     font-family: "Kokoro";
     padding: 20px;                      /* 余白指定 */
-    box-shadow: 2px 2px 2px 2px #bbb;   /* 影指定 */
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
     width: 400px;                       /* 幅指定 */
     height: auto;                      /* 縦指定 */
     // background:linear-gradient(-45deg, #64b3f4, #ffc107);
     background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
-    url(https://drive.google.com/uc?export=download&id=121qdof1f_rdpTA4Gz67V5_sCjOzzpF6C) fixed;
+    url(https://girlydrop.com/wp-content/uploads/post/p8265.jpg) fixed;
     background-size: cover;
     color: #000;
     // float: left;  /* 右、左指定 */
