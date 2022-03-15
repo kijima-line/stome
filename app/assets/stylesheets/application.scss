@@ -20,7 +20,7 @@
 
  body {
    
-  background:linear-gradient(-45deg, #fff, #fce6a6);
+  background:linear-gradient(-45deg, #fff, #FF862E );
 
 }
  
@@ -34,10 +34,10 @@
   margin-bottom: 50px;
   display: inline-block;      /* インラインブロック要素にする */
     /* かど指定 */
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
      /* かど指定 */
     font-family: "Kokoro";
     padding: 20px;                      /* 余白指定 */

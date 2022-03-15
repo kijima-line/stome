@@ -5,8 +5,10 @@ class StocksController < ApplicationController
   
   def index
     @stocks = Stock.includes(:user).order("created_at DESC")
-    @mees = Mee.includes(:user).order("published_at ASC")
 
+    @mees = Mee.order("published_at ASC")
+    
+    # reverse_order,order
     # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
 
   end
@@ -47,7 +49,7 @@ class StocksController < ApplicationController
   
   def show
     # @stock = Stock.new
-    @stock = Stock.find(params[:id])
+     @stock = Stock.find(params[:id])
     # mees = Mee.find(params[:id])
      @mees = @stock.mees.order("published_at ASC").includes(:user)
      @mee = Mee.new

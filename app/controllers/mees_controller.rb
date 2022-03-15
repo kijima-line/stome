@@ -33,7 +33,7 @@ class MeesController < ApplicationController
      if @mees.update(mee_params)
       redirect_to root_path
       else
-      redirect_to :edit
+      render :edit
       end
     end
 
