@@ -58,7 +58,7 @@ Things you may want to cover:
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| name           | string     | null: false                    |
+| text           | string     | null: false                    |
 | user_id        | integer    | null: false                    |
 
 

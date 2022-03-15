@@ -15,8 +15,8 @@
          
               <br><span>タイトル　<%=stocks.title%></span> <br> <br>
                 <% if user_signed_in? && current_user.id == stocks.user_id %>
-                  <%#追加実装予定= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-                    <%#追加実装予定= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+                  <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
+                    <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
                       <% end %>
                         <% stocks.mees.each do |m|%>
                           <p><%= l m.published_at %>
