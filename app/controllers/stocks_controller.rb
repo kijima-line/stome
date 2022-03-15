@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
   
   def index
-    @stocks = Stock.includes(:user).order("created_at DESC")
+    @stocks = Stock.order("created_at DESC").includes(:user)
 
     @mees = Mee.order("published_at ASC")
     
