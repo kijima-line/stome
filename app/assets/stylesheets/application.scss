@@ -20,7 +20,7 @@
 
  body {
    
-  background:linear-gradient(-45deg, #fff, #FF862E );
+  background:linear-gradient(-45deg, #fff, #ffffff );
 
 }
  
@@ -30,7 +30,7 @@
   max-width: 800px;
 }
 /* 共通 */
-/* 一覧リスト */
+/* 一覧リスト 1*/
 .inline-block_test {  
   display: inline-block;
   min-width: auto;                       /* 幅指定 */
@@ -64,13 +64,48 @@
     align-items:  center !important; /* 上下中央揃え */
 
 }
-/* 一覧リスト */
+/* 一覧リスト1 */
+/* 一覧リスト 1*/
+.inline-block_test2 {  
+
+  min-width: auto;                       /* 幅指定 */
+  height: auto;  
+  justify-content: space-between; /* 左右均等分布 */
+ 
+}
+   
+.inline2{
+  margin-bottom: 50px;
+  /* インラインブロック要素にする */
+    /* かど指定 */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     /* かど指定 */
+    font-family: "Kokoro";
+    padding: 20px;                      /* 余白指定 */
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
+                       /* 縦指定 */
+    // background:linear-gradient(-45deg, #64b3f4, #ffc107);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
+    url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
+    background-size: cover;
+    color: #000;
+    float: left;  /* 右、左指定 */
+    list-style: none;
+    font-size: 23px;
+    margin: 30px;
+    align-items:  center !important; /* 上下中央揃え */
+
+}
+/* 一覧リスト1 */
 
 
  /* justify-content:flex-end; を指定 */
  
 
-
+//グローバルナビここから
 .logo{
 /* 　//float: left;によって<logo>要素と<list-menu>要素が横並びになる */
   margin:10px 0 0 30px;
@@ -96,11 +131,12 @@ list-style: none;
 }
 
 li {
-/* 　// liの中の高さとか、間の調整 */
+/*  liの中の高さとか、間の調整 */
 padding: 0 15px;
 margin-top:15px;
 
 }
+//グローバルナビここまで
 
 .userList{
   font-size:2em;
@@ -129,7 +165,8 @@ h1 {
 .heading06 {
   font-family: "Kokoro";
   color: rgb(150, 144, 112);
-  background:linear-gradient(-45deg, #fff, #ffc107);
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
+  url(https://japaclip.com/files/icon-bean-bulb.png) fixed;
 	position: relative;
 	padding-top: 70px;
 	padding-bottom: 50px;
@@ -339,3 +376,4 @@ input[type="checkbox"]:checked + #koko{
   height: auto;
   opacity: 1;
 }
+

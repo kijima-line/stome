@@ -23,13 +23,15 @@
                                   <div class="comment">
                                     <p class="user-info"> </p>
                                     <p>
-                                      <%= l mees.published_at%>
-                                        <%= mees.text%>
-                                          <%#= コメント編集機能(render('mees/edit'))%>
+                                      ⏰　<%= l mees.published_at%>  <%= mees.text%>
+                                        
                                             <% if user_signed_in? && current_user.id == @stock.user_id %>
-                                              <%= button_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
-                                                <%= button_to "削除",stock_mee_path(@stock,mees.id), method: :delete %>
+                                              <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
+                                                <%= link_to "削除",stock_mee_path(@stock,mees.id), method: :delete %></p>
                                                   <% end %>
                                                     <%# 要素 終わり%>
                                                       <% end %>
-                                    </p>
+
+
+                                                      
+                                    
