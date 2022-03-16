@@ -69,14 +69,18 @@
 /* 一覧リスト1 */
 /* 一覧リスト 1*/
 .inline-block_test2 {  
-
+  
   min-width: 100%;                       /* 幅指定 */
   height: auto;  
   justify-content: space-between; /* 左右均等分布 */
  
 }
    
+.inline p{
+  color: #333;
+}
 .inline2{
+  
   margin-bottom: 50px;
   /* インラインブロック要素にする */
     /* かど指定 */
@@ -93,7 +97,7 @@
     background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
     url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
     background-size: cover;
-    color: #000;
+    
     float: left;  /* 右、左指定 */
     list-style: none;
     font-size: 21px;
