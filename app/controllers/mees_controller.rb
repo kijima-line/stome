@@ -36,6 +36,11 @@ class MeesController < ApplicationController
       render :edit
       end
     end
+    def search
+      # @stocks = Stock.search(params[:keyword])
+      # @mees = Mee.search(params[:keyword])
+    end
+  
 
   private
   def mee_params

@@ -155,13 +155,13 @@ margin-top:15px;
 
 }
 
- footer{
-  width: 100%;
-  background-color: #ffc107;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0;
-}
+//  footer{
+//   width: 100%;
+//   background-color: #ffc107;
+//   color: #fff;
+//   text-align: center;
+//   padding: 30px 0;
+// }
 
 /* 見出し */
 h1 {
@@ -475,4 +475,10 @@ nav ul {
 }
 nav ul li a {
 	padding: 0 20px;
+}
+
+.search-form{
+  text-align: center;
+  font-weight: bold;
+  font-size:16px;
 }
