@@ -1,37 +1,48 @@
-<%#タイトル登録後フラッシュ %>
-  
-    <%#タイトル登録後フラッシュ %>
-      <%# 要素　始まり %>
-        <%# 要素 始まり%>
-          <div id="comments">
-            <h2 class="heading06" data-en="routine"><%= notice %></h2>
-            <p><%= @stock.title %>
-                <% if user_signed_in? && current_user.id == @stock.user_id %>
-      	<p><%= render partial: "edit" %></p>
-<%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %></p>
-            <%= render 'shared/error_messages', model: @mee %>
-              <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
-                <%# 要素 終わり%>
-                  <%# 要素 始まり%>
-                    <%= f.time_select :published_at,{:minute_step => 5}%>
-                      <%= f.text_field :text , class: "comment-text"%>
-                        <%= f.submit "ルーティンを追加", class: "comment-submit" %>
-                          <% end %>
-                            <%# 要素終わり %>
-                              <% end %>
-                                <% @mees.each do |mees| %>
-                                  <div class="comment">
-                                    <p class="user-info"> </p>
-                                    <p>
-                                      ⏰　<%= l mees.published_at%>  <%= mees.text%>
-                                        
+<br>
+        <div id="comments">
+          <h2 class="heading06" data-en="routine"><%= notice %></h2>
+          <ol class="sample1">
+    <%= notice %>
+          <h4>✨<%= @stock.title %>✨</h4>
+            <% if user_signed_in? && current_user.id == @stock.user_id %>
+                <%= render partial: "edit" %>
+                <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>
+              <%= render 'shared/error_messages', model: @mee %>
+                <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
+                 
+                      <%= f.time_select :published_at,{:minute_step => 5}%>
+                        <%= f.text_field :text , class: "comment-text"%>
+                          <%= f.submit "ルーティンを追加", class: "comment-submit" %>
+                            <% end %>
+                                <% end %>
+                                </ol>
+                                  <hr>
+                                  
+                                    <ol class="sample1">
+                                      <h3><%= @stock.title %>のルーティン一覧</h3>
+                                       <% @mees.each do |mees| %>
+                                     
+                                      <li> ⏰
+                                        　<%= l mees.published_at%>
+                                          　<%= mees.text%>　
                                             <% if user_signed_in? && current_user.id == @stock.user_id %>
-                                              <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>
-                                                <%= link_to "削除",stock_mee_path(@stock,mees.id), method: :delete %></p>
-                                                  <% end %>
-                                                    <%# 要素 終わり%>
-                                                      <% end %>
+                                              <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>　
+                                                <%= link_to "削除",stock_mee_path(@stock,mees.id), method: :delete %>
+                                                 <% end %>
+                                      </li>
+                                       <% end %>
+                                       <p>by　<%= current_user.name %> </p>
+                                    </ol>
+                                          
+                                      <%# 要素 終わり%>
+                                       
+                     
+ <% if @mees.length == 0 %> 
+                                           <ol class="sample1">
+                                           <h5>⚠️⚠️こちらはサンプルです</h5>
+  <li>(例)　⏰　10:00　 おきる</li>
+   <li>(例)　⏰　10:10　 歯磨き</li>
+    <li>(例)　⏰　10:20　 洗顔</li>
 
-
-                                                      
-                                    
+</ol>
+   <% end %>

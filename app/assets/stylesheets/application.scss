@@ -19,8 +19,9 @@
 /* 共通 */
 
  body {
-   
-  background:linear-gradient(-45deg, #fff, #ffffff );
+  height: 100%;
+  width: 100%;
+  background:linear-gradient(-45deg, #fff, #ffe388 );
 
 }
  
@@ -40,6 +41,7 @@
 }
    
 .inline{
+ 
   margin-bottom: 50px;
   /* インラインブロック要素にする */
     /* かど指定 */
@@ -59,16 +61,16 @@
     color: #000;
     // float: left;  /* 右、左指定 */
     list-style: none;
-    font-size: 23px;
-    margin: 30px;
-    align-items:  center !important; /* 上下中央揃え */
+    font-size: 21px;
+    margin: 30px;  //margin:  0 auto;            /* 中央寄せ */
+ 
 
 }
 /* 一覧リスト1 */
 /* 一覧リスト 1*/
 .inline-block_test2 {  
 
-  min-width: auto;                       /* 幅指定 */
+  min-width: 100%;                       /* 幅指定 */
   height: auto;  
   justify-content: space-between; /* 左右均等分布 */
  
@@ -94,7 +96,7 @@
     color: #000;
     float: left;  /* 右、左指定 */
     list-style: none;
-    font-size: 23px;
+    font-size: 21px;
     margin: 30px;
     align-items:  center !important; /* 上下中央揃え */
 
@@ -227,11 +229,11 @@ h1 {
 }
 
 .box-name {
-  margin-bottom: 13px;
+  margin-bottom: 11px;
 }
 
 .box-email {
-  margin-bottom: 13px;
+  margin-bottom: 11px;
 }
 
 .box-password {
@@ -240,7 +242,7 @@ h1 {
 
 .box-name label, .box-email label, .box-password label {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 11px;
   padding-left: 2px;
   padding-bottom: 2px;
 }
@@ -252,7 +254,7 @@ h1 {
   height: 31px;
   border: 1px solid #a6a6a6;
   box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
-  border-radius: 3px;
+  border-radius: 1px;
   padding: 0 7px;
 }
 
@@ -265,7 +267,7 @@ h1 {
 }
 
 .box-password a {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .box-login {
@@ -277,7 +279,7 @@ h1 {
   width: 100%;
   height: 31px;
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-  border-radius: 3px;
+  border-radius: 1px;
   border: 1px #a88734 solid;
 }
 
@@ -287,9 +289,9 @@ h1 {
 }
 
 .remember {
-  font-size: 13px;
+  font-size: 11px;
   margin-top: 18px;
-  padding-left: 3px;
+  padding-left: 1px;
 }
 
 .box-newusr p {
@@ -308,12 +310,12 @@ h1 {
   display: block;
   width: 100%;
   height: 31px;
-  font-size: 13px;
+  font-size: 11px;
   color: #111;
   line-height: 31px;
   text-align: center;
   background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
-  border-radius: 3px;
+  border-radius: 1px;
   border: 1px #a2a6ac solid;
 }
 
@@ -377,3 +379,63 @@ input[type="checkbox"]:checked + #koko{
   opacity: 1;
 }
 
+
+ol.sample1{
+  margin:  0 auto;            /* 中央寄せ */
+  counter-reset:list;
+  list-style-type:none;
+  position:relative;
+  font: 14px/1.6 'Mv Boli', 'arial narrow', sans-serif;
+  padding: 1.2em;
+
+  background:linear-gradient(-45deg, rgb(212, 205, 205), #F2EFE7 );
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset,0 0 4px rgba(0, 0, 0, 0.2) ;
+  -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset,0 0 4px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset,0 0 4px rgba(0, 0, 0, 0.2) ;
+  min-width:340px;
+  max-width: 600px;
+}
+ol.sample1:after{
+  content:"list-yaruko";  /* 右下の文字 */
+  position: absolute;
+  bottom: 8px;
+  right: 1.2em;
+  font-size:16px;
+  color:#bbb;
+  
+}
+ol.sample1 li{
+  
+  position:relative;
+  padding: 7px 5px 7px 50px;
+  margin: 7px 0 10px 0px;
+  font-weight: bold;
+  font-size:16px;
+  border-bottom:dashed 1px #ccc;
+
+}
+ol.sample1 li:first-child{
+  margin-top:0;
+}
+ol.sample1 li:last-child{
+  margin-bottom:20px;
+}
+ol.sample1 li:before{
+  counter-increment: list;
+
+  position: absolute;
+  left: 15px;
+  font-size:1.2em;
+   top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+ol p{
+  text-align: right;
+  font-weight: bold;
+  font-size:16px;
+  
+}
