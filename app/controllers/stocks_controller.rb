@@ -5,9 +5,7 @@ class StocksController < ApplicationController
   
   def index
     @stocks = Stock.order("created_at DESC").includes(:user)
-
     @mees = Mee.order("published_at ASC")
-    
     # reverse_order,order
     # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
 
@@ -20,7 +18,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     if @stock.save
-      redirect_to "/stocks/#{@stock.id}", notice: 'ルーティンのタイトルを作成しました。'
+      redirect_to "/stocks/#{@stock.id}", notice: '✅ ルーティンのタイトルを作成しました🎉'
     else
       render :new
     end

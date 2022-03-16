@@ -7,8 +7,7 @@
             <h2 class="heading06" data-en="routine"><%= notice %></h2>
             <p><%= @stock.title %>
                 <% if user_signed_in? && current_user.id == @stock.user_id %>
-    
-<span id="b"><%= render partial: "edit" %></span>
+      	<p><%= render partial: "edit" %></p>
 <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %></p>
             <%= render 'shared/error_messages', model: @mee %>
               <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>

@@ -23,7 +23,7 @@
         <% if user_signed_in? %>
         <li>
           <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,:method => :get %>
-          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" %>
+          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
         </li>
         <% else%>
           <li>

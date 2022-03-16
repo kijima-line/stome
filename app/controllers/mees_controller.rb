@@ -31,7 +31,7 @@ class MeesController < ApplicationController
       @stock = Stock.find(params[:stock_id])
       @mees   = @stock.mees.find(params[:id])
      if @mees.update(mee_params)
-      redirect_to root_path
+      redirect_to "/stocks/#{@stock.id}"
       else
       render :edit
       end

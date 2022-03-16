@@ -1,27 +1,9 @@
 <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
 <br>
 <h2 class="heading06" data-en="routine">最新ルーティン</h2>
 <div class="notice">
   <%= notice %>
 </div>
-      <% @stocks.each do |stocks| %>
-          <div class="inline-block_test">
-            <%= stocks.user.name %>さんの投稿　
-            <% if user_signed_in? && current_user.id == stocks.user_id %>
-              <%= link_to '追加', stock_path(stocks.id) %><br>
-              <% else %>
-              <%= link_to '詳細', stock_path(stocks.id) %><br>
-              <%end%>
-         <br>
-     <p>タイトル　<%= stocks.title %></p>
-                <% if user_signed_in? && current_user.id == stocks.user_id %>
-                  <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-                    <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
-                      <% end %>
-                        <% stocks.mees.order(published_at: "ASC").each do |m|%>
-                          <p><%= l m.published_at %>
-                            <%= m.text%></p>
-                              <%end%>
-           </div>
-           <%end%>
+<%= render partial: "stock" %>
 

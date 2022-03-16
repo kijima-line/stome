@@ -25,14 +25,23 @@
 }
  
  .box {
-  width: 90vw;
+  width: auto;
+  height: auto;
   max-width: 800px;
 }
 /* 共通 */
 /* 一覧リスト */
-.inline-block_test {
+.inline-block_test {  
+  display: inline-block;
+  min-width: auto;                       /* 幅指定 */
+  height: auto;  
+  justify-content: space-between; /* 左右均等分布 */
+ 
+}
+   
+.inline{
   margin-bottom: 50px;
-  display: inline-block;      /* インラインブロック要素にする */
+  /* インラインブロック要素にする */
     /* かど指定 */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -42,8 +51,7 @@
     font-family: "Kokoro";
     padding: 20px;                      /* 余白指定 */
     box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
-    width: 400px;                       /* 幅指定 */
-    height: auto;                      /* 縦指定 */
+                       /* 縦指定 */
     // background:linear-gradient(-45deg, #64b3f4, #ffc107);
     background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
     url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
@@ -53,6 +61,8 @@
     list-style: none;
     font-size: 23px;
     margin: 30px;
+    align-items:  center !important; /* 上下中央揃え */
+
 }
 /* 一覧リスト */
 
@@ -149,11 +159,6 @@ h1 {
 
 // ここからログイン・ログアウト
 
-* {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
 
 .box1 {
   width: 350px;
@@ -281,3 +286,56 @@ h1 {
 
 // ここまでログイン・ログアウト
 
+//スマホ表示
+// @media screen and (max-width: 480px) {
+//   .inline-block_test {
+//     min-width: 480px;
+//   }
+// }
+#koko{
+  display:none;
+}
+
+input[type="checkbox"]:checked + #koko{
+  display:block;
+}
+
+/*全体*/
+.hidden_box {
+  margin: 2em 0;/*前後の余白*/
+  padding: 0;
+}
+
+/*ボタン装飾*/
+.hidden_box label {
+  padding: 15px;
+  font-weight: bold;
+  border: solid 2px black;
+  cursor :pointer;
+}
+
+/*ボタンホバー時*/
+.hidden_box label:hover {
+  background: #efefef;
+}
+
+/*チェックは見えなくする*/
+.hidden_box input {
+  display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
