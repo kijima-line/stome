@@ -1,21 +1,21 @@
-
-<h2 class="heading06" data-en="routine"><%= @user.name %>さんの投稿一覧</p></h2>
+<h2 class="heading06" data-en="routine">
+  <%= @user.name %>さんの投稿一覧</p>
+</h2>
 <% @stocks.each do |stock| %>
   <div class="inline-block_test2">
     <div class="inline2">
       <p>
-
-      <p>
-        <%= stock.title %>
-      </p>
-     <% stock.mees.order(published_at: "ASC").each do |m|%>
-        <div class="comment">
-          <p class="user-info"> </p>
-          <p>
-            <%= l m.published_at%>
-              <%= m.text%>
-          </p>
-        </div>
-        <% end %>
+        <p>
+          <%= stock.title %>
+        </p>
+        <% stock.mees.order(published_at: "ASC").each do |m|%>
+          <div class="comment">
+            <p class="user-info"> </p>
+            <p>
+              <%= l m.published_at%>
+                <%= m.text%>
+            </p>
+          </div>
+          <% end %>
     </div>
     <% end %>

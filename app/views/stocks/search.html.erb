@@ -1,14 +1,7 @@
-
-
-<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet"> <br>
-<h2 class="heading06" data-en="routine">🎉 最新ルーティン</h2>
-<p>
-  <%= notice %>
-</p>
-<div class="search-form">
+<h2 class="heading06" data-en="routine">🔎 ルーティン検索</h2>
 <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
-</div>
+
 <%= render partial: "stock" %>

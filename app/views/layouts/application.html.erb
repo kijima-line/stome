@@ -24,11 +24,11 @@
           <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%></li>
                   <% else%>
 			<li>    <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %></li> <% end %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %></li> 
+            <% end %>
 		</ul>
 	</nav>
 </header>
-
 
     <%= yield %>
 

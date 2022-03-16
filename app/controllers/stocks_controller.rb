@@ -1,12 +1,12 @@
 class StocksController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_stock, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   
   def index
     @stocks = Stock.order("created_at DESC").includes(:user)
-    @mees = Mee.order("published_at ASC")
+    @mees = Mee.order("published_at ASC").includes(:user)
     # reverse_order,order
     # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
 
@@ -52,6 +52,10 @@ class StocksController < ApplicationController
     # mees = Mee.find(params[:id])
      @mees = @stock.mees.order("published_at ASC").includes(:user)
      @mee = Mee.new
+  end
+  def search
+    @stocks = Stock.search(params[:keyword])
+    # @mees = Mee.search(params[:keyword])
   end
 
 
