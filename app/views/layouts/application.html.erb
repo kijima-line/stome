@@ -11,42 +11,31 @@
 </head>
 
 <body>
-
+<header>
     <div class="logo">
       <h1>
         <%= link_to "StoMee 🗒", root_path,class:"userList" %>
       </h1>
     </div>
-    <div class="list-menu">
-       
-      <ul class="list">
-        <% if user_signed_in? %>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,:method => :get %>
-          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
-        </li>
-        <% else%>
-          <li>
-          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
-            
-          </li>
-          <% end %>
-      </ul>
-    </div>
-
+	<nav>
+		<ul>
+       <% if user_signed_in? %>
+			<li>          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,:method => :get %>
+          <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%></li>
+                  <% else%>
+			<li>    <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %></li> <% end %>
+		</ul>
+	</nav>
+</header>
 
 
     <%= yield %>
 
-
- <%
-=begin%>
  <footer>
         <p>@StoMee</p>
       </footer>   
-<%
-=end%>
+
 
 </body>
 </html>

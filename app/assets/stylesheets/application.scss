@@ -155,13 +155,13 @@ margin-top:15px;
 
 }
 
-//  footer{
-//   width: 100%;
-//   background-color: #ffc107;
-//   color: #fff;
-//   text-align: center;
-//   padding: 30px 0;
-// }
+ footer{
+  width: 100%;
+  background-color: #ffc107;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+}
 
 /* 見出し */
 h1 {
@@ -442,4 +442,37 @@ ol p{
   font-weight: bold;
   font-size:16px;
   
+}
+
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style-type: none;
+}
+a {
+	color: rgb(47, 103, 255);
+	text-decoration: none;
+}
+
+
+header {
+  
+	display: flex;
+	align-items: center;
+}
+.logo {
+	padding: 10px 20px;
+	display: inline-block;
+}
+nav {
+  margin-left: auto;
+}
+nav ul {
+	display: flex;
+}
+nav ul li a {
+	padding: 0 20px;
 }
