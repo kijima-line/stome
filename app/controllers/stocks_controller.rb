@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_stock, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
 
@@ -51,7 +52,6 @@ class StocksController < ApplicationController
     # mees = Mee.find(params[:id])
      @mees = @stock.mees.order("published_at ASC").includes(:user)
      @mee = Mee.new
-    
   end
 
 
@@ -67,9 +67,7 @@ class StocksController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      redirect_to action: :index
+      redirect_to root_path
     end
   end
-
-  
 end

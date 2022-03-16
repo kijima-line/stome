@@ -1,22 +1,69 @@
-      <% @stocks.each do |stocks| %>
-          <div class="inline-block_test">
-          <div class="inline">
-            <%= link_to "#{stocks.user.name}" ,user_path(stocks.user.id) %>さんの投稿　
-            <% if user_signed_in? && current_user.id == stocks.user_id %>
-              <%= link_to '追加', stock_path(stocks.id) %><br>
-              <% else %>
+<% @stocks.each do |stocks| %>
+  <div class="inline-block_test">
+    <div class="inline">
+      <%= link_to "#{stocks.user.name}" ,user_path(stocks.user.id) %>さんの投稿
+        <% if user_signed_in? && current_user.id == stocks.user_id %>
+          <%= link_to '追加', stock_path(stocks.id) %><br>
+            <% else %>
               <%= link_to '詳細', stock_path(stocks.id) %><br>
-              <%end%>
-         <br>
-     <p>✅ タイトル <%= stocks.title %></p>
-                <% if user_signed_in? && current_user.id == stocks.user_id %>
-                  <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-                    <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
-                      <% end %>
-                        <% stocks.mees.order(published_at: "ASC").each do |m|%>
-                          <p><%= l m.published_at %>
-                            <%= m.text%></p>
-                              <%end%>
-                              </div>
-           </div>
-           <%end%>
+                <%end%> <br>
+                  <p>✅ タイトル
+                    <%= stocks.title %>
+                  </p>
+                  <% if user_signed_in? && current_user.id == stocks.user_id %>
+                    <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
+                      <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+                        <% end %>
+                          <% stocks.mees.order(published_at: "ASC").each do |m|%>
+                            <p>
+                              <%= l m.published_at %>
+                                <%= m.text%>
+                            </p>
+                            <%end%>
+    </div>
+  </div>
+  <%end%>
+    <% if @stocks.length == 0 %>
+      <div class="inline-block_test">
+        <div class="inline">
+          <p>じゅんいちさんの投稿</p>
+          <h4>夕方ルーティン</h4>
+          <p>⏰　18:00 ランニング</p>
+          <p>⏰　18:20 シャワー</p>
+          <p>⏰　18:30 夕食＆TV</p>
+          <p>⏰　19:00 プログラミング学習</p>
+          <p>⏰　20:00 ストレッチ＆マインドフルネス</p>
+          <p>⏰　20:30 歯磨き</p>
+          <p>⏰　20:50 寝かしつけ</p>
+          <p>⏰　21:30 就寝</p>
+        </div>
+      </div>
+      <div class="inline-block_test">
+        <div class="inline">
+          <p>じゅんいちさんの投稿</p>
+          <h4>夕方ルーティン</h4>
+          <p>⏰　18:00 ランニング</p>
+          <p>⏰　18:20 シャワー</p>
+          <p>⏰　18:30 夕食＆TV</p>
+          <p>⏰　19:00 プログラミング学習</p>
+          <p>⏰　20:00 ストレッチ＆マインドフルネス</p>
+          <p>⏰　20:30 歯磨き</p>
+          <p>⏰　20:50 寝かしつけ</p>
+          <p>⏰　21:30 就寝</p>
+        </div>
+      </div>
+      <div class="inline-block_test">
+        <div class="inline">
+          <p>じゅんいちさんの投稿</p>
+          <h4>夕方ルーティン</h4>
+          <p>⏰　18:00 ランニング</p>
+          <p>⏰　18:20 シャワー</p>
+          <p>⏰　18:30 夕食＆TV</p>
+          <p>⏰　19:00 プログラミング学習</p>
+          <p>⏰　20:00 ストレッチ＆ <br>マインドフルネス</p>
+          <p>⏰　20:30 歯磨き</p>
+          <p>⏰　20:50 寝かしつけ</p>
+          <p>⏰　21:30 就寝</p>
+        </div>
+      </div>
+      <% end %>
