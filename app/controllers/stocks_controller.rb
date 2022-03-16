@@ -19,7 +19,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     if @stock.save
-      redirect_to "/stocks/#{@stock.id}", notice: '✅ ルーティンのタイトルを作成しました🎉'
+      redirect_to "/stocks/#{@stock.id}", notice: 'タイトルを作成しました🎉'
     else
       render :new
     end

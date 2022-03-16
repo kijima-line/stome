@@ -34,7 +34,7 @@
 /* 一覧リスト 1*/
 .inline-block_test {  
   display: inline-block;
-  min-width: auto;                       /* 幅指定 */
+  width: 60%;                      /* 幅指定 横並びはmin-width:480px;*/
   height: auto;  
   justify-content: space-between; /* 左右均等分布 */
  
