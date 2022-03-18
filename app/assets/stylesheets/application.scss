@@ -31,81 +31,6 @@
   max-width: 800px;
 }
 /* 共通 */
-/* 一覧リスト 1*/
-.inline-block_test {  
-  display: inline-block;
-  width: 60%;                      /* 幅指定 横並びはmin-width:480px;*/
-  height: auto;  
-  justify-content: space-between; /* 左右均等分布 */
- 
-}
-   
-.inline{
- 
-  margin-bottom: 50px;
-  /* インラインブロック要素にする */
-    /* かど指定 */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-     /* かど指定 */
-    font-family: "Kokoro";
-    padding: 20px;                      /* 余白指定 */
-    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
-                       /* 縦指定 */
-    // background:linear-gradient(-45deg, #64b3f4, #ffc107);
-    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
-    url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
-    background-size: cover;
-    color: #000;
-    // float: left;  /* 右、左指定 */
-    list-style: none;
-    font-size: 21px;
-    margin: 30px;  //margin:  0 auto;            /* 中央寄せ */
- 
-
-}
-/* 一覧リスト1 */
-/* 一覧リスト 1*/
-.inline-block_test2 {  
-  
-  min-width: 100%;                       /* 幅指定 */
-  height: auto;  
-  justify-content: space-between; /* 左右均等分布 */
- 
-}
-   
-.inline p{
-  color: #333;
-}
-.inline2{
-  
-  margin-bottom: 50px;
-  /* インラインブロック要素にする */
-    /* かど指定 */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-     /* かど指定 */
-    font-family: "Kokoro";
-    padding: 20px;                      /* 余白指定 */
-    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
-                       /* 縦指定 */
-    // background:linear-gradient(-45deg, #64b3f4, #ffc107);
-    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
-    url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
-    background-size: cover;
-    
-    float: left;  /* 右、左指定 */
-    list-style: none;
-    font-size: 21px;
-    margin: 30px;
-    align-items:  center !important; /* 上下中央揃え */
-
-}
-/* 一覧リスト1 */
 
 
  /* justify-content:flex-end; を指定 */
@@ -334,54 +259,6 @@ h1 {
 //   .inline-block_test {
 //     min-width: 480px;
 //   }
-// }
-#koko{
-  display:none;
-}
-
-input[type="checkbox"]:checked + #koko{
-  display:block;
-}
-
-/*全体*/
-.hidden_box {
-  margin: 2em 0;/*前後の余白*/
-  padding: 0;
-}
-
-/*ボタン装飾*/
-.hidden_box label {
-  padding: 15px;
-  font-weight: bold;
-  border: solid 2px black;
-  cursor :pointer;
-}
-
-/*ボタンホバー時*/
-.hidden_box label:hover {
-  background: #efefef;
-}
-
-/*チェックは見えなくする*/
-.hidden_box input {
-  display: none;
-}
-
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.8s;
-}
-
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
-  padding: 10px 0;
-  height: auto;
-  opacity: 1;
-}
 
 
 ol.sample1{
@@ -482,3 +359,96 @@ nav ul li a {
   font-weight: bold;
   font-size:16px;
 }
+
+
+#hideMe {
+  background-color: #f0c14b;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 18px;
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+
+.buruburu {
+  display: inline-block;
+  animation: hurueru .6s  backwards;
+}
+
+@keyframes hurueru {
+  
+  0% {transform: translate(0px, 0px) rotateZ(0deg)}
+  25% {transform: translate(2px, 2px) rotateZ(1deg)}
+  50% {transform: translate(0px, 2px) rotateZ(0deg)}
+  75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+  100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+/* 一覧リスト 1*/
+.inline-block_test {  
+  display: inline-block;
+  width: 60%;                      /* 幅指定 横並びはmin-width:480px;*/
+  height: auto;  
+  justify-content: space-between; /* 左右均等分布 */
+ 
+}
+.inline p{
+  color: #333;
+}
+   
+.inline{
+ 
+  margin-bottom: 50px;
+  /* インラインブロック要素にする */
+    /* かど指定 */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     /* かど指定 */
+    font-family: "Kokoro";
+    padding: 20px;                      /* 余白指定 */
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
+                       /* 縦指定 */
+    // background:linear-gradient(-45deg, #64b3f4, #ffc107);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
+    url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
+    background-size: cover;
+    color: #000;
+    // float: left;  /* 右、左指定 */
+    list-style: none;
+    font-size: 21px;
+    margin: 30px;  //margin:  0 auto;            /* 中央寄せ */
+ 
+
+}
+/* 一覧リスト1 */
+/* 一覧リスト 1*/
+.inline-block_test2 {  
+  
+  min-width: 100%;                       /* 幅指定 */
+  height: auto;  
+  justify-content: space-between; /* 左右均等分布 */
+ 
+}
+   

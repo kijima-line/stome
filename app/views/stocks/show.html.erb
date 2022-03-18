@@ -2,7 +2,7 @@
         <div id="comments">
           <h2 class="heading06" data-en="routine"><%= notice %></h2>
           <ol class="sample1">
-          <h4>✨<%= @stock.title %>✨</h4>
+          <h4><span class="buruburu">✨</span><%= @stock.title %><span class="buruburu">✨</span></h4>
             <% if user_signed_in? && current_user.id == @stock.user_id %>
                 <%= render partial: "edit" %>
                 <%= button_to 'ルーティン削除' ,stock_path(@stock.id),method: :delete %>

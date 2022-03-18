@@ -1,3 +1,181 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// 横スクロール実装予定（サンプル）
+// <div class="loopSlide">
+//   <ul>
+//     <li></li>
+//    </ul>
+// </div>
+
+.loopSlide {
+
+  width: 100vw;
+  overflow: hidden;
+
+  ul {
+      padding: 0;
+      width: 100vw;
+      display: flex;
+      flex-shrink: 0;
+
+      &:first-child {
+          animation: slide1 50s -0s linear infinite;
+      }
+
+      &:last-child {
+          animation: slide2 50s linear infinite;
+      }
+
+      li {
+          display: inline-block;
+          width: 100%;
+          min-width: 150px;
+          margin-right: 20px;
+          list-style: none;
+          text-align: center;
+
+          img {
+              display: block;
+              width: 20%;
+              height: auto;
+          }
+
+      }
+
+  }
+  
+ &:hover {
+      ul {
+          animation-play-state: paused;
+      }
+  }
+}
+
+@keyframes slide1 {
+  0% {
+      transform: translateX(100%);
+  }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes slide2 {
+  0% {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-200%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inline2{
+  
+  margin-bottom: 50px;
+  /* インラインブロック要素にする */
+    /* かど指定 */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     /* かど指定 */
+    font-family: "Kokoro";
+    padding: 20px;                      /* 余白指定 */
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /* 影指定 */
+                       /* 縦指定 */
+    // background:linear-gradient(-45deg, #64b3f4, #ffc107);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, 
+    url(https://drive.google.com/uc?export=download&id=1bLKRjt72iBO3l-BNUgMU30wAQLWy-79u) fixed;
+    background-size: cover;
+    
+    float: left;  /* 右、左指定 */
+    list-style: none;
+    font-size: 21px;
+    margin: 30px;
+    align-items:  center !important; /* 上下中央揃え */
+
+}
+/* 一覧リスト1 */
+
+.loopSlide {
+
+  width: 100vw;
+  overflow: hidden;
+
+  ul {
+      padding: 0;
+      width: 100vw;
+      display: flex;
+      flex-shrink: 0;
+
+      &:first-child {
+          animation: slide1 50s -0s linear infinite;
+      }
+
+      &:last-child {
+          animation: slide2 50s linear infinite;
+      }
+
+      li {
+          display: inline-block;
+          width: 100%;
+          min-width: 150px;
+          margin-right: 20px;
+          list-style: none;
+          text-align: center;
+
+          img {
+              display: block;
+              width: 20%;
+              height: auto;
+          }
+
+      }
+
+  }
+  
+ &:hover {
+      ul {
+          animation-play-state: paused;
+      }
+  }
+}
+
+@keyframes slide1 {
+  0% {
+      transform: translateX(100%);
+  }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes slide2 {
+  0% {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-200%);
+  }
+}
+
