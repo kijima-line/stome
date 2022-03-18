@@ -12,13 +12,21 @@
                       <%= f.time_select :published_at,{:minute_step => 5}%>
                         <%= f.text_field :text , class: "comment-text"%>
                           <%= f.submit "ルーティンを追加", class: "comment-submit" %>
+                          <% if @mees.length != 0 %>
+                                 <p style="text-align:right"><%= link_to "登録を完了する" ,root_path  %></p>
+                                 <%else%>
+                                 <span class="buruburu">⚠️ルーティンを入力してください</span>
+                                 <% end %>
+                          
                             <% end %>
                                 <% end %>
+
                                 </ol>
                                   <hr>
-                                  
+                                 
                                     <ol class="sample1">
                                     <% if @mees.length != 0 %>
+                                                                    
                                       <h3><%= @stock.title %>のルーティン一覧</h3>
                                       
                                        <% @mees.each do |mees| %>
@@ -33,7 +41,7 @@
                                       </li>
                                       
                                        <% end %>
-                                          
+                                      
                                       <p>by　<%= @stock.user.name %> </p>
                                        <% end %>
                                     </ol>
