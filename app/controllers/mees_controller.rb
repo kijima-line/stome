@@ -26,6 +26,9 @@ class MeesController < ApplicationController
     def edit
       @stock = Stock.find(params[:stock_id])
       @mee   = @stock.mees.find(params[:id])
+      unless user_signed_in?
+        redirect_to root_path
+      end
     end
     def update
       @stock = Stock.find(params[:stock_id])
