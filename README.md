@@ -46,7 +46,7 @@ Things you may want to cover:
 |  | 一覧機能 |  |  |  |
 
  # ER図プレビュー
- - ![プレビュー](/ER%E5%9B%B3.dio)
+ - ![プレビュー](/ER%E5%9B%B3.svg)
 ## users テーブル
 
 | Column             | Type   | Options                  |
