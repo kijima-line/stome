@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: stome_production
-  username: stome
-  password: <%= ENV['STOME_DATABASE_PASSWORD'] %>
+   username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
