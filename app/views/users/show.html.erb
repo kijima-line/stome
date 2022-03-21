@@ -2,8 +2,8 @@
   <%= @user.name %>さんの投稿一覧</p>
 </h2>
 <% @stocks.each do |stock| %>
-  <div class="inline-block_test2">
-    <div class="inline2">
+  <div class="inline-block_test">
+    <div class="inline">
       <p>
         <p>
           <%= stock.title %>
@@ -15,7 +15,8 @@
               <%= l m.published_at%>
                 <%= m.text%>
             </p>
+         
           </div>
-          <% end %>
+             <% end %>
     </div>
     <% end %>

@@ -1,0 +1,22 @@
+
+                                    <ol class="sample1">
+           
+                                                                    
+                                      <h3><%= @stock.title %>のルーティン一覧</h3>
+                                      
+                                       <% @mees.each do |mees| %>
+                                     
+                                      <li> ⏰
+                                        　<%= l mees.published_at%>
+                                          　<%= mees.text%>　
+                                            <% if user_signed_in? && current_user.id == @stock.user_id %>
+                                              <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>　
+                                                <%= link_to "削除",stock_mee_path(@stock,mees.id), method: :delete %>
+                                                 <% end %>
+                                      </li>
+                                      
+                                       <% end %>
+                                      
+                                      <p>by　<%= @stock.user.name %> </p>
+                    
+                                    </ol>

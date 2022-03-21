@@ -14,13 +14,31 @@
 
  */
  @import "bootstrap"; 
+
+
+header {
+  
+	display: flex;
+	align-items: center;
+}
  
+ #header{
+  width:30%;
+  height:40%;
+  position:fixed;
+  top:80px;
+  right:60px;
+  background-color:blue;
+  color:white;
+  top:50vh;
+}
+
  
 /* 共通 */
 
  body {
-  height: 100%;
-  width: 100%;
+
+  width:100%;
   background:linear-gradient(-45deg, #fff, #ffe388 );
 
 }
@@ -260,7 +278,7 @@ h1 {
 //     min-width: 480px;
 //   }
 
-
+ /* ルーティン登録 */
 ol.sample1{
   margin:  0 auto;            /* 中央寄せ */
   counter-reset:list;
@@ -333,13 +351,9 @@ a {
 	color: rgb(47, 103, 255);
 	text-decoration: none;
 }
+ /* ルーティン登録 */
+  /* ナビ */
 
-
-header {
-  
-	display: flex;
-	align-items: center;
-}
 .logo {
 	padding: 10px 20px;
 	display: inline-block;
@@ -354,13 +368,14 @@ nav ul li a {
 	padding: 0 20px;
 }
 
+  /* ナビここまで */
 .search-form{
   text-align: center;
   font-weight: bold;
   font-size:16px;
 }
 
-
+  /* notice*/
 #hideMe {
   background-color: #f0c14b;
   color: rgb(255, 255, 255);
@@ -404,6 +419,7 @@ nav ul li a {
   75% {transform: translate(2px, 0px) rotateZ(-1deg)}
   100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
+  /* noticeここまで*/
 /* 一覧リスト 1*/
 .inline-block_test {  
   display: inline-block;
@@ -419,7 +435,7 @@ nav ul li a {
 .inline{
  
   margin-bottom: 50px;
-  /* インラインブロック要素にする */
+
     /* かど指定 */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -452,3 +468,14 @@ nav ul li a {
  
 }
    
+ 
+ #side-a{
+  width:30%;
+  height:40%;
+  position:fixed;
+  right:60px;
+  background-color:blue;
+  color:white;
+  top:50vh;
+  
+}
