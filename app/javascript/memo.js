@@ -6,16 +6,24 @@ window.onload = function () {
     this.style.backgroundColor = "blue"
   }, false);
 
-};
 
-$(document).ready(function() {
-  $(".edit").click(function(){
-     $("#text").removeAttr('style');
-     $(this).hide();
-     $("#regist").removeAttr('style');
+$(function() {
+  var topBtn = $('#side-a');    
+  topBtn.hide();
+  //スクロールが100に達したらボタン表示
+  $(window).scroll(function () {
+      if ($(this).scrollTop() > 150) {
+          topBtn.fadeIn();
+      } else {
+          topBtn.fadeOut();
+      }
   });
-
-  $(".add_btn").click(function(){
-     $('#food_form').submit();
+  //スクロールしてトップ
+  topBtn.click(function () {
+      $('body,html').animate({
+          //scrollTop: 0 クリックしたら戻る
+      }, 500);
   });
 });
+
+};

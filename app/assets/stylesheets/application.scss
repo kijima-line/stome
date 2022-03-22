@@ -49,11 +49,6 @@ header {
   max-width: 800px;
 }
 /* 共通 */
-
-
- /* justify-content:flex-end; を指定 */
- 
-
 //グローバルナビここから
 .logo{
 /* 　//float: left;によって<logo>要素と<list-menu>要素が横並びになる */
@@ -421,7 +416,7 @@ nav ul li a {
   /* noticeここまで*/
 /* 一覧リスト 1*/
 .inline-block_test {  
-  display: inline-block;
+
   width: 60%;                      /* 幅指定 横並びはmin-width:480px;*/
   height: auto;  
  
@@ -451,7 +446,7 @@ nav ul li a {
     color: #000;
     // float: left;  /* 右、左指定 */
     list-style: none;
-    font-size: 21px;
+    font-size: 16px;
     margin: 30px;  //margin:  0 auto;            /* 中央寄せ */
  
 
@@ -469,10 +464,10 @@ nav ul li a {
  /*お気に入り機能*/
  #side-a{
   width:30%;
-  height:40%;
+  height:100%;
   position:fixed;
-  top:50vh;
-  right:7vh;
+  top:40px;
+  right:8vh;
   background-color:blue;
   color:white;
 
