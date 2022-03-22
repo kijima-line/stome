@@ -467,7 +467,7 @@ nav ul li a {
 }
    
  /*お気に入り機能*/
- .side-a{
+ #side-a{
   width:30%;
   height:40%;
   position:fixed;
@@ -477,12 +477,12 @@ nav ul li a {
   color:white;
 
 }
-.side-a {
+#side-a {
   display: none;
 }
 @media (min-width: 768px) {
   
-  .side-a{
+  #side-a{
     display: block;
   }
 }
