@@ -101,6 +101,7 @@ Things you may want to cover:
 ### Association
 - has_many :stocks
 - has_many :mees
+- has_many :likes
 
 
 
@@ -130,3 +131,18 @@ Things you may want to cover:
 ### Association
 - belongs_to :user 
 - has_many   :mees,dependent: :destroy
+- has_many   :likes,dependent: :destroy
+
+
+##   likesテーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| stock_id       | integer    | null: false                    |
+| user_id        | integer    | null: false                    |
+
+
+
+### Association
+- belongs_to :user
+- belongs_to :stock
