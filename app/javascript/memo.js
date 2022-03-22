@@ -7,3 +7,15 @@ window.onload = function () {
   }, false);
 
 };
+
+$(document).ready(function() {
+  $(".edit").click(function(){
+     $("#text").removeAttr('style');
+     $(this).hide();
+     $("#regist").removeAttr('style');
+  });
+
+  $(".add_btn").click(function(){
+     $('#food_form').submit();
+  });
+});

@@ -1,5 +1,5 @@
-
+<div class="edit_t">
 <%= form_with(model: @stock) do |f| %>
 <%= f.text_field :title %>
-<%= f.submit "タイトル更新" , id: "submit" %>
-<% end %>
+<%= f.submit "タイトル更新" , id: "submit" %>  
+<% end %><%= button_to '削除' ,stock_path(@stock.id),method: :delete %></div>

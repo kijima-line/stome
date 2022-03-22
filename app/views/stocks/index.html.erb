@@ -10,5 +10,9 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 </div>
-<%= render partial: "stock" %>
-<div id="side-a">お気に入り機能実装予定</div>
+
+
+<div class='container'>
+  <div class='column--l'><%= render partial: "stock" %></div>
+  <div class='column--r'><div id="side-a">お気に入り機能実装予定</div></div>
+</div>

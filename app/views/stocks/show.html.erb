@@ -2,19 +2,22 @@
         <div id="comments">
           <h2 class="heading06" data-en="routine"><span class="buruburu"><%= notice %></span></h2>
           <ol class="sample1">
+
           <h4><span class="buruburu">✨</span><%= @stock.title %><span class="buruburu">✨</span></h4>
             <% if user_signed_in? && current_user.id == @stock.user_id %>
-                <%= render partial: "edit" %><%= button_to '削除' ,stock_path(@stock.id),method: :delete %>
+                <%= render partial: "edit" %><br>
+
               <%= render 'shared/error_messages', model: @mee %>
+                       <span class="buruburu">⚠️ルーティンを入力してください</span>
                 <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
-                 
+     
                       <%= f.time_select :published_at,{:minute_step => 5}%>
                         <%= f.text_field :text , class: "comment-text"%>
                           <%= f.submit "ルーティンを追加", class: "comment-submit" %>
                           <% if @mees.length != 0 %>
-                                 <p style="text-align:right"><%= link_to "登録を完了する" ,root_path  %></p>
-                                 <%else%>
-                                 <span class="buruburu">⚠️ルーティンを入力してください</span>
+                                 <p style="text-align:right"><%= link_to "登録を完了する" ,root_path ,class:"btn btn-info" %></p>
+                        
+                        
                                  <% end %>
                           
                             <% end %>

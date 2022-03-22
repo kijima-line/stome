@@ -486,3 +486,22 @@ nav ul li a {
     display: block;
   }
 }
+
+
+.edit_t{
+  display: flex;
+
+}
+
+.btnbtn-info{
+  position:fixed;
+  right:50px;
+  bottom:50px;
+  transition:1s;
+  opacity:0.7;
+  }
+.btnbtn-info:hover{
+  opacity:1;
+  }
+
+  
