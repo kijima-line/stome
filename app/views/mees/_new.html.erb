@@ -3,7 +3,7 @@
            
                                                                     
                                       <h3><%= @stock.title %>のルーティン一覧</h3>
-                                      
+                                      <p>by　<%= @stock.user.name %> </p>
                                        <% @mees.each do |mees| %>
                                      
                                       <li> ⏰
@@ -16,6 +16,11 @@
                                       </li>
                                       
                                        <% end %>
+
+                                       <%= render partial: "likes/like"%>
+                                      
+
+
                                       
                                       <p>by　<%= @stock.user.name %> </p>
                     
