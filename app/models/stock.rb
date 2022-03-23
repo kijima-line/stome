@@ -2,6 +2,7 @@ class Stock < ApplicationRecord
   
   validates :title, presence: true
   belongs_to :user
+  has_many :likes,dependent: :destroy
   has_many :mees, dependent: :destroy
   def self.search(search)
     if search != ""

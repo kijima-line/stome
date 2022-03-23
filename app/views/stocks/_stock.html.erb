@@ -1,25 +1,28 @@
-<% @stocks.each do |stocks| %>
+<% @stocks.each do |stock| %>
   <div class="inline-block_test">
     <div class="inline">
-      <%= link_to "#{stocks.user.name}" ,user_path(stocks.user.id) %>さんの投稿
-        <% if user_signed_in? && current_user.id == stocks.user_id %>
-          <%= link_to '追加', stock_path(stocks.id) %><br>
+      <%= link_to "#{stock.user.name}" ,user_path(stock.user.id) %>さんの投稿
+        <% if user_signed_in? && current_user.id == stock.user_id %>
+          <%= link_to '追加', stock_path(stock.id) %><br>
             <% else %>
-              <%= link_to '詳細', stock_path(stocks.id) %><br>
+              <%= link_to '詳細', stock_path(stock.id) %><br>
                 <%end%> <br>
                   <p>✅ タイトル
-                    <%= stocks.title %>
+                    <%= stock.title %>
                   </p>
-                  <% if user_signed_in? && current_user.id == stocks.user_id %>
-                    <%#= link_to '編集' ,edit_stock_path(stocks.id),method: :get %>
-                      <%#= link_to '削除' ,stock_path(stocks.id),method: :delete %>
+                  <% if user_signed_in? && current_user.id == stock.user_id %>
+                    <%#= link_to '編集' ,edit_stock_path(stock.id),method: :get %>
+                      <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>
                         <% end %>
-                          <% stocks.mees.order(published_at: "ASC").each do |m|%>
+                          <% stock.mees.order(published_at: "ASC").each do |m|%>
                             <p>
                               ⏰　<%= l m.published_at %>
                                 <%= m.text%>
                             </p>
                             <%end%>
+
+                      <%#= render partial: "likes/like"%>
+
     </div>
   </div>
   <%end%>

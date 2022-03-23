@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  devise_for :users
  resources :stocks do
    resources :mees,only: [:create, :destroy,:edit, :update,:show]
+   resource :likes, only: [:create, :destroy]
    collection do
     get 'search'
   end
