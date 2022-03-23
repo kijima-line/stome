@@ -11,9 +11,9 @@ class LikesController < ApplicationController
   end
   
   def destroy
-    user=current_user
-    stock=stock.find(params[:stock_id])
-    if like = Like.find_by(user_id: user.id,stock_id:stock.id)
+    @user = current_user
+    @stock = Stock.find(params[:stock_id])
+    if like = Like.find_by(user_id: @user.id,stock_id:@stock.id)
      like.destroy
      redirect_back(fallback_location: root_path)
     else

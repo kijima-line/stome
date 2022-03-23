@@ -1,9 +1,12 @@
 class Stock < ApplicationRecord
   
   validates :title, presence: true
+
+  
   belongs_to :user
   has_many   :likes,dependent: :destroy
   has_many :mees, dependent: :destroy
+  #検索機能
   def self.search(search)
     if search != ""
       Stock.where('title LIKE(?)', "%#{search}%")
