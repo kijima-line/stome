@@ -2,7 +2,7 @@
         <div id="comments">
           <h2 class="heading06" data-en="routine"><span class="buruburu"><%= notice %></span></h2>
           <ol class="sample1">
-
+<p><span>やってみたい数: </span><%= @stock.likes.count %></p>
           <h4><span class="buruburu">✨</span><%= @stock.title %><span class="buruburu">✨</span></h4>
             <% if user_signed_in? && current_user.id == @stock.user_id %>
                 <%= render partial: "edit" %><br>
