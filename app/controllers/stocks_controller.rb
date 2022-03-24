@@ -48,7 +48,7 @@ class StocksController < ApplicationController
   def update
     stock = Stock.find(params[:id])
   if stock.update(stock_params)
-    redirect_to action: :show, notice2: '✅ ルーティンのタイトルを更新しました🎉'
+    redirect_to request.referer, notice: '✅ タイトルを更新しました🎉'
   else
     redirect_to root_path
   end

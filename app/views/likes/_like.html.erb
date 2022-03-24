@@ -11,7 +11,7 @@
        <p><span>解除: </span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :delete %></p>
      </div>
      <div class="count-btn">
-       
+     <p><span>やってみたい数: </span><%= @stock.likes.count %></p>
      </div>
      <% else %>
        <%= link_to "ユーザー登録をしたら「やってみたい👍」機能や自分のルーティンを作成することができます。" , new_user_registration_path%>
