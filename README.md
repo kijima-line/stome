@@ -124,7 +124,7 @@ Things you may want to cover:
 
 
  # ER図プレビュー
- ![プレビュー](/er.dio)
+ ![プレビュー](/er.svg)
 
 
 ## users テーブル
