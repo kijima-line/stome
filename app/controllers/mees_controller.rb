@@ -11,14 +11,14 @@ class MeesController < ApplicationController
 
   def create
     mee = Mee.create(mee_params)
-    redirect_to "/stocks/#{mee.stock.id}"  
+    redirect_to "/stocks/#{mee.stock.id}" ,notice: '✏️追加しました。'
   end
   def destroy
      stock = Stock.find(params[:stock_id])
      mee = stock.mees.find(params[:id])
     if current_user.id == mee.user.id
       mee.destroy
-      redirect_to request.referer
+      redirect_to request.referer,notice: '⚠️削除しました'
     else
       render "stocks/show"
     end
@@ -34,7 +34,7 @@ class MeesController < ApplicationController
       @stock = Stock.find(params[:stock_id])
       @mees   = @stock.mees.find(params[:id])
      if @mees.update(mee_params)
-      redirect_to "/stocks/#{@stock.id}"
+      redirect_to "/stocks/#{@stock.id}",notice: 'コメントを更新しました。'
       else
       render :edit
       end
