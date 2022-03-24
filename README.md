@@ -112,7 +112,7 @@ Things you may want to cover:
 | フォロー管理 | 登録機能 | フォローできるようになる |  | 5h |
 |  | 削除機能 | 追加したフォローを削除できるようになる |  |  |
 |  | 一覧機能 | フォローしたユーザーを表示する |  |  |
-| []お気に入り管理 | 登録機能 | お気に入り登録ができる |  | 5h |
+| お気に入り管理 | 登録機能 | お気に入り登録ができる |  | 5h |
 |  | 削除機能 | お気に入りした投稿を削除する |  |  |
 |  | 一覧機能 | 追加したお気に入りを見ることができる |  |  |
 |  |  |  |  |  |
@@ -125,6 +125,8 @@ Things you may want to cover:
 
  # ER図プレビュー
  ![プレビュー](/ER%E5%9B%B3.svg)
+
+
 ## users テーブル
 
 | Column             | Type   | Options                  |
@@ -134,14 +136,10 @@ Things you may want to cover:
 | encrypted_password | string | null: false              |
 
 
-
-
-
 ### Association
-- has_many :stocks
-- has_many :mees
-
-
+ - has_many :stocks
+ - has_many :likes, dependent: :destroy
+ - has_many :mees, dependent: :destroy
 
 ## mees テーブル
 
@@ -155,8 +153,6 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :stock,dependent: :destroy
 
-
-
 ##  stocksテーブル
 
 | Column         | Type       | Options                        |
@@ -167,5 +163,19 @@ Things you may want to cover:
 
 
 ### Association
-- belongs_to :user 
-- has_many   :mees,dependent: :destroy
+ - belongs_to :user
+ - has_many :likes,dependent: :destroy
+ - has_many :mees, dependent: :destroy
+
+##  likesテーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| stock_id       | integer    | null: false                    |
+| user_id        | integer    | null: false                    |
+
+
+
+### Association
+- belongs_to :stock_id 
+- belongs_to :user
