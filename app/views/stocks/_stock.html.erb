@@ -15,14 +15,12 @@
                       <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>
                         <% end %>
                           <% stock.mees.order(published_at: "ASC").each do |m|%>
-                            <p>
-                              ⏰　<%= l m.published_at %>
+                            <p> ⏰
+                              <%= l m.published_at %>
                                 <%= m.text%>
                             </p>
                             <%end%>
-
-                      <%#= render partial: "likes/like"%>
-
+                              <%#= render partial: "likes/like"%>
     </div>
   </div>
   <%end%>
@@ -42,6 +40,3 @@
         </div>
       </div>
       <% end %>
-      
-
-  
