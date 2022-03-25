@@ -1,6 +1,6 @@
 <h2 class="heading06" data-en="routine"><span class="buruburu">🔎</span> ルーティン検索</h2>
 <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 

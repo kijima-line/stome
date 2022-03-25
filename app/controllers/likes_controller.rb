@@ -2,15 +2,12 @@ class LikesController < ApplicationController
   def create
     like = current_user.likes.build(stock_id: params[:stock_id])
     if like.save
-      respond_to do |format|
-        format.js
-      end
       redirect_back(fallback_location: root_path,notice: '投稿に「やってみたい👍」しました')
     #  redirect_back(fallback_location: root_path)
     else
       @stock = like.stock
       like = @stock.likes
-      redirect_to @stock,notice: 'すでに「やってみたい👍」してます'
+      redirect_to root_path,notice: 'すでに「やってみたい👍」してます'
     end
   end
   

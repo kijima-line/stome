@@ -5,7 +5,7 @@
 
 <div class="search-form">
 <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 </div>
@@ -14,7 +14,17 @@
 <div class='container'>
   <div class='column--l'><%= render partial: "stock" %></div>
 
- <div class='column--r'><div id="side-a">お気に入り機能実装予定</div>  
+ <div class='column--r'><div id="side-a">
+ 
+ <% @all_ranks.each.with_index(1)  do |stock ,i|%>
+     第
+    <%= i %>
+    位
+ <p><%= stock.title  %>　<%= stock.likes.count %></p>
+ <%end%>
+ 
+ 
+ </div>  
 
 
 </div>
