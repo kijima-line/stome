@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     else
       @stock = like.stock
       like = @stock.likes
-      redirect_to root_path,notice: 'すでに「やってみたい👍」してます'
+      redirect_to @stock,notice: 'すでに「やってみたい👍」してます'
     end
   end
   

@@ -10,7 +10,8 @@
                   <p>✅ タイトル
                     <%= stock.title %>
                   </p>
-                  <div class="option" >
+                  
+                  <div class="option">
                  <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post,id:"yatte" %></p>
                  <p><span>　解除: </span><%=link_to stock.likes.count, stock_likes_path(stock),remote: true, method: :delete %></p>
                    <p><span>　やってみたい総数: </span><%= stock.likes.count %></p></div>
