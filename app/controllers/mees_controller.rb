@@ -11,7 +11,13 @@ class MeesController < ApplicationController
 
   def create
     mee = Mee.create(mee_params)
+   if mee.valid?
+    
     redirect_to "/stocks/#{mee.stock.id}" ,notice: '✏️追加しました。'
+  else
+    redirect_to "/stocks/#{mee.stock.id}" ,notice: '記入してください。'
+  end
+   
   end
   def destroy
      stock = Stock.find(params[:stock_id])

@@ -35,7 +35,7 @@ header {
 
 body {
     width: 100%;
-    background: linear-gradient(-45deg, #fff, #ffe388);
+    background: linear-gradient(-45deg,  #ffe388,#fff, #ffe388);
 }
 
 .box {
@@ -378,7 +378,7 @@ nav ul li a {
 .search-form {
     text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 26px;
 }
 
 
@@ -500,7 +500,7 @@ nav ul li a {
     width: 30%;
     height: 40%;
     position: fixed;
-    top: 50vh;
+    top: 27vh;
     right: 7vh;
     background-color: blue;
     color: white;
@@ -530,4 +530,9 @@ nav ul li a {
 
 .btnbtn-info:hover {
     opacity: 1;
+}
+.option{
+  display: flex;
+ justify-content: center;
+
 }

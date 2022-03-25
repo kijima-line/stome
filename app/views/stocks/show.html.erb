@@ -6,6 +6,7 @@
       <%= @stock.title %><span class="buruburu">✨</span></h4>
     <% if user_signed_in? && current_user.id == @stock.user_id %>
       <%= render partial: "edit" %><br>
+  
         <%= render 'shared/error_messages', model: @mee %> <span class="buruburu">⚠️ルーティンを入力してください</span>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
@@ -19,6 +20,9 @@
                       <% end %>
                         <% end %>
   </ol>
+      <p id="yatte_<%= @stock.id %>">
+      <%= render partial: "likes/like",remote: true%>
+      </p>
   <hr>
   <%= render partial: "mees/new" %>
     <%# 要素 終わり%>

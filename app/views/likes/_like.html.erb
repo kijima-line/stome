@@ -4,17 +4,18 @@
    <div class="option" >
      <div class="favorite-btn">
       
-       <p> <span>やってみたい👍　</span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :post %></p>
+       <p> <span>やってみたい👍　</span><%=link_to @stock.likes.count, stock_likes_path(@stock.id),remote: true, method: :post,id:"yatte" %></p>
      </div>
      <div class="report-btn">
-       <%#= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-       <p><span>解除: </span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :delete %></p>
+
+       
+       <p><span>　解除: </span><%=link_to @stock.likes.count, stock_likes_path(@stock),remote: true, method: :delete %></p>
      </div>
      <div class="count-btn">
-     <p><span>やってみたい数: </span><%= @stock.likes.count %></p>
+         <p><span>　やってみたい総数: </span><%= @stock.likes.count %></p>
      </div>
      <% else %>
-       <%= link_to "ユーザー登録をしたら「やってみたい👍」機能や自分のルーティンを作成することができます。" , new_user_registration_path%>
+       <%= link_to "ユーザー登録をしたら「やってみたい👍」機能や自分のルーティンを作成することができます。" , new_user_registration_path ,class:"option"%>
      <% end %>
    </div>
    <% end %> 
