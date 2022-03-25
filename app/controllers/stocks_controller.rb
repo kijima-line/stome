@@ -7,16 +7,6 @@ class StocksController < ApplicationController
   def index
     @stocks = Stock.order("created_at DESC").includes(:user)
     @mees = Mee.order("published_at ASC").includes(:user)
-    #@stock = Stock.select('stock_id')
-    #@stock = Stock.find(params[:id])
-    # @likes = Like.includes(:user)
-     #@likes = @stock.likes.wher
-     #(params[:stock_id])
-     #likes
-   
-
-    # reverse_order,order
-    # 昇順にしたい@mees = @stock.mees.order("published_at ASC").includes(:user)
 
   end
   
