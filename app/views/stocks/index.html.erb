@@ -14,15 +14,11 @@
 <div class='container'>
   <div class='column--l'><%= render partial: "stock" %></div>
 
- <div class='column--r'><div id="side-a">
- 
- <% @all_ranks.each.with_index(1)  do |stock ,i|%>
-     第
-    <%= i %>
-    位
- <p><%= stock.title  %>　<%= stock.likes.count %></p>
- <%end%>
- 
+ <div class='column--r'>
+ <div id="side-a">
+<%#= 部分テンプレート%>
+<%= render partial: "rank" %>
+ <%#= 部分テンプレート%>
  
  </div>  
 
