@@ -3,7 +3,7 @@
      第
     <%= i %>
     位
- <p><%= stock.title  %>　👍総数<%= stock.likes.count %></p>
+ <p><%= link_to stock.title,stock_path(stock)  %> 　👍総数<%= stock.likes.count %> by　<%= "#{stock.user.name}"%></p>
  <%end%>
  <%else%>
  ログインしたらやってみたいランキングが見れます
