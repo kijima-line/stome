@@ -1,9 +1,8 @@
  <% if user_signed_in?  %>
   <% @all_ranks.each.with_index(1)  do |stock ,i| %>
-     第
-    <%= i %>
-    位
- <p><%= stock.title  %>　👍総数<%= stock.likes.count %></p>
+     <p>第<%= i %>位　　<%= "#{stock.user.name}"%>さん　</p>
+     
+ <p><%= link_to stock.title,stock_path(stock)  %>　👍総数<%= stock.likes.count %> </p>
  <%end%>
  <%else%>
  ログインしたらやってみたいランキングが見れます
