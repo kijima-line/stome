@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function () {
   $(function() {
     var topBtn = $('#side-a');    
     topBtn.hide();
@@ -17,4 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     });
   });
-});
+  
+  document.querySelector("#side-a").addEventListener("mousedown", function (event) {
+    this.style.backgroundColor = "pink"
+  }, false);
+  document.querySelector("#side-a").addEventListener("click", function (event) {
+    this.style.backgroundColor = "blue"
+  }, false);
+
+};
