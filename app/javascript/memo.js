@@ -1,10 +1,10 @@
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function() {
   $(function() {
     var topBtn = $('#side-a');    
     topBtn.hide();
-    //スクロールが100に達したらボタン表示
+    //スクロールが100に達したら表示
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 150) {
+        if ($(this).scrollTop() > 200) {
             topBtn.fadeIn();
         } else {
             topBtn.fadeOut();
@@ -17,21 +17,4 @@ window.onload = function () {
         }, 500);
     });
   });
-  
-  document.querySelector("#side-a").addEventListener("mousedown", function (event) {
-    this.style.backgroundColor = "pink"
-  }, false);
-  document.querySelector("#side-a").addEventListener("click", function (event) {
-    this.style.backgroundColor = "blue"
-  }, false);
-
-};
-
-function post (){
-  const submit = document.getElementById("submit");
-  submit.addEventListener("click", () => {
-    console.log("イベント発火");
-  });
-};
-
-window.addEventListener('load', post);
+});
