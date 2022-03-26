@@ -281,10 +281,8 @@ ol.sample1 {
     position: relative;
     font: 14px/1.6 'Mv Boli', 'arial narrow', sans-serif;
     padding: 1.2em;
-    background: linear-gradient(-45deg, rgb(212, 205, 205), #F2EFE7);
-    -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset, 0 0 4px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset, 0 0 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset, 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
+
     min-width: 340px;
     max-width: 600px;
 }
@@ -320,7 +318,7 @@ ol.sample1 li:before {
     counter-increment: list;
     position: absolute;
     left: 15px;
-    font-size: 1.2em;
+    font-size: 1.7em;
     top: 50%;
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -500,7 +498,7 @@ nav ul li a {
     width: 30%;
     height: 70%;
     position: fixed;
-    top: 20vh;
+    top: 15vh;
     right: 7vh;
     box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
     background: linear-gradient(-45deg,  #ffe388,#fff, #ffe388);
