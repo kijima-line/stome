@@ -8,6 +8,7 @@
       <%= render partial: "edit" %><br>
   
         <%= render 'shared/error_messages', model: @mee %> <span class="buruburu">⚠️ルーティンを入力してください</span>
+        
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
               <%= f.text_field :text , class: "comment-text"%>
@@ -18,10 +19,11 @@
                     </p>
                     <% end %>
                       <% end %>
+                      <%= render partial: "likes/like"%>
                         <% end %>
   </ol>
-      <p id="yatte_<%= @stock.id %>">
-      <%= render partial: "likes/like",remote: true%>
+
+      
       </p>
   <hr>
   <%= render partial: "mees/new" %>

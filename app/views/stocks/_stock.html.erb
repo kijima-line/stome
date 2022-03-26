@@ -10,11 +10,19 @@
                   <p>✅ タイトル
                     <%= stock.title %>
                   </p>
-                  
-                  <div class="option">
-                 <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post,id:"yatte" %></p>
+                  <%#= render partial: "likes/like",partial:@likes %>
+                  <% if user_signed_in?  %>
+                                    <div class="option" id="index_ine">
+                 <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post%></p>
                  <p><span>　解除: </span><%=link_to stock.likes.count, stock_likes_path(stock),remote: true, method: :delete %></p>
                    <p><span>　やってみたい総数: </span><%= stock.likes.count %></p></div>
+                   <%else%>
+                                    <div class="option" id="index_ine">
+                 <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post,data: {confirm:"ログインしてください"}%></p>
+                 <p><span>　解除: </span><%=link_to stock.likes.count, stock_likes_path(stock),remote: true, method: :delete,data: {confirm:"ログインしてください"} %></p>
+                   <p><span>　やってみたい総数: </span><%= stock.likes.count %></p></div>
+
+                   <%end %>
                   <% if user_signed_in? && current_user.id == stock.user_id %>
                     <%#= link_to '編集' ,edit_stock_path(stock.id),method: :get %>
                       <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>

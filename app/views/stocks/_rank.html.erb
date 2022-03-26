@@ -1,0 +1,10 @@
+ <% if user_signed_in?  %>
+  <% @all_ranks.each.with_index(1)  do |stock ,i| %>
+     第
+    <%= i %>
+    位
+ <p><%= stock.title  %>　👍総数<%= stock.likes.count %></p>
+ <%end%>
+ <%else%>
+ ログインしたらやってみたいランキングが見れます
+ <%end%>
