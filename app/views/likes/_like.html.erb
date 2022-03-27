@@ -1,19 +1,24 @@
 
 <% if@mees.length != 0 %>
 <% if user_signed_in?  %>
-   <div class="option" >
+     <% if current_user.already_liked?(@stock) %>
+
+          <div class="option" >
+     <div class="report-btn">
+       <p><span>やってみたい👍　</span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :delete %></p>
+     </div>
+
+     <%else%>
+    <div class="option" >
      <div class="favorite-btn">
-      
        <p> <span>やってみたい👍　</span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :post %></p>
      </div>
-     <div class="report-btn">
-       <p><span>　解除　:　</span><%=link_to @stock.likes.count, stock_likes_path(@stock), method: :delete %></p>
-     </div>
-     <div class="count-btn">
-     <p><span>　やってみたい総数: </span><%= @stock.likes.count %></p>
+     <%end%>
      </div>
      <% else %>
-       <%= link_to "ユーザー登録をしたら「やってみたい👍」機能や自分のルーティンを作成することができます。" , new_user_registration_path%>
+       <%= link_to "ログイン" , new_user_session_path %>　/　<%= link_to "新規登録" , new_user_registration_path %>
+       <br><%= link_to "ユーザー登録" , new_user_registration_path%>をしたら「やってみたい👍」機能や<br>自分のルーティンを作成することができます。
+       
      <% end %>
    </div>
    <% end %> 

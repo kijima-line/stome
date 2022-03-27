@@ -1,12 +1,13 @@
 <h2 class="heading06" data-en="routine">
   <%= @user.name %>さんの投稿一覧</p>
 </h2>
-<% @stocks.each do |stock| %>
+
   <div class="inline-block_test">
+  <% @user.stocks.each do |stock| %>
     <div class="inline">
       <p>
         <p>
-          <%= stock.title %>
+          <%= stock.title %><%= link_to '編集', stock_path(stock.id) %>
         </p>
         <% stock.mees.order(published_at: "ASC").each do |m|%>
           <div class="comment">
@@ -17,8 +18,28 @@
             </p>
          
           </div>
+          
+          
              <% end %>
+              <%#= 投稿ごとのやってみたい挿入予定%>
+             👍総数<%= stock.liked_users.count %>
+             <%#= 投稿ごとのやってみたい挿入予定%>
     </div>
     <% end %>
   
+  <h3>やってみたい👍している投稿</h3>
+<% @user.liked_stocks.each do |stock| %>
+
+  <p><%= link_to stock.title %> 　👍総数 (<%= stock.liked_users.count %>)　By<%=link_to stock.user.name%></p>
+ 
+<% end %>
+
   <%#= 自分のやってみたいした投稿表示 %>
+   <div class='column--r'>
+ <div id="side-a">
+<%#= 部分テンプレート%>
+自分の投稿に対しての　👍総数　<%=@likes_count%>
+ <%#= 部分テンプレート%>
+ <%#=ユーザーランキング実装予定%>
+ </div>  
+</div>

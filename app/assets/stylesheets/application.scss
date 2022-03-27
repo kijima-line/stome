@@ -13,21 +13,34 @@
  *= require bootstrap/dist/css/bootstrap.min.css
 
  */
- @import "bootstrap";
+@import "bootstrap";
+
 header {
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
 }
 
 #header {
-    width: 30%;
-    height: 40%;
-    position: fixed;
+
     top: 80px;
     right: 60px;
     background-color: blue;
     color: white;
     top: 50vh;
+    /*fixedを設定して固定*/
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+    /*高さ指定*/
+    width: 100%;
+    /*横幅指定*/
+    z-index: 999;
+    /*最前面へ*/
+    /*以下はレイアウトのためのCSS*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -35,7 +48,7 @@ header {
 
 body {
     width: 100%;
-    background: linear-gradient(-45deg,  #ffe388,#fff, #ffe388);
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
 }
 
 .box {
@@ -423,15 +436,19 @@ nav ul li a {
     0% {
         transform: translate(0px, 0px) rotateZ(0deg)
     }
+
     25% {
         transform: translate(2px, 2px) rotateZ(1deg)
     }
+
     50% {
         transform: translate(0px, 2px) rotateZ(0deg)
     }
+
     75% {
         transform: translate(2px, 0px) rotateZ(-1deg)
     }
+
     100% {
         transform: translate(0px, 0px) rotateZ(0deg)
     }
@@ -439,7 +456,6 @@ nav ul li a {
 
 
 /* noticeここまで*/
-
 
 /* 一覧リスト 1*/
 
@@ -495,18 +511,27 @@ nav ul li a {
 /*お気に入り機能*/
 
 #side-a {
-    width: 30%;
+    width: 35%;
     height: 70%;
-    position: fixed;
-    top: 15vh;
+    top: 40vh;
     right: 7vh;
     box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
-    background: linear-gradient(-45deg,  #ffe388,#fff, #ffe388);
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
     color: #111111;
+    position: fixed;
+    /* 要素をスクロールに応じて固定 */
 
     padding: 20px;
 
 }
+
+//未ログインの時ぼかし
+#side-b {
+    -ms-filter: blur(6px);
+    filter: blur(6px);
+}
+
+//未ログインの時ぼかし
 
 @media (min-width: 768px) {
     #side-a {
@@ -529,8 +554,16 @@ nav ul li a {
 .btnbtn-info:hover {
     opacity: 1;
 }
-.option{
-  display: flex;
- justify-content: center;
 
+//やってみたいボタン
+.option {
+    display: flex;
+    justify-content: left;
+}
+
+div.index_m {
+    margin: 30px;
+    padding: 10px;
+    border: 1px #a2a6ac solid;
+    backdrop-filter: blur(12px);
 }
