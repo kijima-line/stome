@@ -7,7 +7,7 @@ class StocksController < ApplicationController
   def index
     @stocks = Stock.order("created_at DESC").includes(:user)
     @mees = Mee.order("published_at ASC").includes(:user)
-    @all_ranks = Stock.find(Like.group(:stock_id).order('count(stock_id) desc').limit(5).pluck(:stock_id))
+    @all_ranks = Stock.find(Like.group(:stock_id).order('count(stock_id) desc').limit(3).pluck(:stock_id))
 
   end
   

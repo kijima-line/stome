@@ -21,6 +21,7 @@
     <ul>
       <% if user_signed_in? %>
         <li>
+        <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
           <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
             <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
         </li>

@@ -1,4 +1,5 @@
 window.onload = function () {
+
   $(function() {
     var topBtn = $('#side-a');    
     topBtn.hide();
@@ -10,19 +11,5 @@ window.onload = function () {
             topBtn.fadeOut();
         }
     });
-    //スクロールしてトップ
-    topBtn.click(function () {
-        $('body,html').animate({
-            //scrollTop: 0 クリックしたら戻る
-        }, 500);
-    });
   });
-  
-  document.querySelector("#side-a").addEventListener("mousedown", function (event) {
-    this.style.backgroundColor = "pink"
-  }, false);
-  document.querySelector("#side-a").addEventListener("click", function (event) {
-    this.style.backgroundColor = "blue"
-  }, false);
-
 };

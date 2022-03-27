@@ -4,7 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          has_many :stocks
-         has_many :likes, dependent: :destroy
          has_many :mees, dependent: :destroy
+         has_many :likes, dependent: :destroy
+         has_many :liked_stocks, through: :likes, source: :stock
          validates :name, presence: true
+         def already_liked?(stock)
+          self.likes.exists?(stock_id: stock.id)
+        end
 end
