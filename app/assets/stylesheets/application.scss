@@ -21,6 +21,7 @@ header {
     top: 0;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 #header {
@@ -35,7 +36,7 @@ header {
     /*高さ指定*/
     width: 100%;
     /*横幅指定*/
-    z-index: 999;
+    z-index: 2;
     /*最前面へ*/
     /*以下はレイアウトのためのCSS*/
     display: flex;
@@ -127,11 +128,12 @@ h1 {
     font-size: 26px;
     text-align: center;
     font-size: 50px;
+    z-index: 0;
 }
 
 .heading06 span {
     position: relative;
-    z-index: 2;
+    z-index: 0;
 }
 
 .heading06::before {
@@ -143,6 +145,7 @@ h1 {
     color: rgba(224, 66, 114, 0.2);
     font-size: 80px;
     font-style: italic;
+    z-index: 0;
 }
 
 
@@ -509,16 +512,20 @@ nav ul li a {
 
 
 /*お気に入り機能*/
+.container {
+    position: relative;
+}
 
 #side-a {
     width: 35%;
-    height: 70%;
-    top: 40vh;
-    right: 7vh;
+    height: auto;
+
     box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
     background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
     color: #111111;
     position: fixed;
+    top: 120px;
+    right: 7vh;
     /* 要素をスクロールに応じて固定 */
 
     padding: 20px;

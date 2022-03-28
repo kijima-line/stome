@@ -7,7 +7,7 @@ class Mee < ApplicationRecord
   #   if search != ""
   #     Mee.where('text LIKE(?))',"%#{search}%")
   #   else
-  #     Mee.all
+  #     Mee.where('text LIKE(?)', "%c%")
   #   end
   # end
 end
