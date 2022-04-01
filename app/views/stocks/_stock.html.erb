@@ -1,7 +1,6 @@
 <% @stocks.each do |stock| %>
   <div class="inline-block_test">
     <div class="inline">
-
       <%= link_to "#{stock.user.name}" ,user_path(stock.user.id) %>さんの投稿
         <% if user_signed_in? && current_user.id == stock.user_id %>
           <%= link_to '編集', stock_path(stock.id) %><br>
@@ -12,42 +11,21 @@
                     <%= stock.title %>
                   </h3>
                   <%#= render partial: "likes/like",partial:@likes %>
- 
-                  <% if user_signed_in? && current_user.id == stock.user_id %>
-                    <%#= link_to '編集' ,edit_stock_path(stock.id),method: :get %>
-                      <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>
-                        <% end %>
-                        <div class="index_m">
-                          <% stock.mees.order(published_at: "ASC").each do |m|%>
-                            <p> ⏰
-                              <%= l m.published_at %>
-                                <%= m.text%>
-                            </p>
-                          
-                            <%end%>
-                              </div>
-                              <%#= render partial: "likes/like"%>
-                                                   <%#=部分テンプレートにしたい%>
-                  <% if user_signed_in?  %>
-                  <div class="option" id="index_ine">
-                  <% if current_user.already_liked?(stock) %>
-                    <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock),remote: true, method: :delete %></p>
-             
-                 <%else%>
-                   <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post%></p>
-                   <%end%>
-                </div>
-                   <%else%>
-                  <div class="option" id="index_ine">
-                 <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock.id),remote: true, method: :post,data: {confirm:"ログインしてください"}%></p>
-                 <p><span> </span><%#=link_to stock.likes.count, stock_likes_path(stock),remote: true, method: :delete,data: {confirm:"ログインしてください"} %></p>
-                  </div>
-                   <%end %>
-                   <%#=部分テンプレートにしたい%>
+                    <% if user_signed_in? && current_user.id == stock.user_id %>
+                      <%#= link_to '編集' ,edit_stock_path(stock.id),method: :get %>
+                        <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>
+                          <% end %>
+                            <div class="index_m">
+                              <% stock.mees.order(published_at: "ASC").each do |m|%>
+                                <p> ⏰
+                                  <%= l m.published_at %>
+                                    <%= m.text%>
+                                </p>
+                                <%end%>
+                            </div>
+                            <%= render partial: "likes/like" , locals: { stock: stock }%>
     </div>
-   
   </div>
-  
   <%end%>
     <% if @stocks.length == 0 %>
       <div class="inline-block_test">
