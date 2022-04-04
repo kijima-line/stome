@@ -3,6 +3,7 @@
   <p>by
     <%= @stock.user.name %>
   </p>
+  <%if  user_signed_in?%>
   <% @mees.each do |mees| %>
     <li> ⏰　
       　<%= l mees.published_at%> →　
@@ -13,5 +14,10 @@
                 <% end %>
     </li>
     <% end %>
+    <%else%>
+    <%= render partial: "stocks/login" , locals: { stock: @stock }%>
+    <% end %>
+  
+    
 
 </ol>

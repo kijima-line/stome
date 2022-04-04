@@ -10,10 +10,10 @@
                   <h3>
                     <%= stock.title %>
                   </h3>
-                  <%#= render partial: "likes/like",partial:@likes %>
+                  <% if user_signed_in?%>
+        
                     <% if user_signed_in? && current_user.id == stock.user_id %>
-                      <%#= link_to '編集' ,edit_stock_path(stock.id),method: :get %>
-                        <%#= link_to '削除' ,stock_path(stock.id),method: :delete %>
+ 
                           <% end %>
                             <div class="index_m">
                               <% stock.mees.order(published_at: "ASC").each do |m|%>
@@ -21,6 +21,12 @@
                                   <%= l m.published_at %>
                                     <%= m.text%>
                                 </p>
+                                <%end%>
+
+                                <%else%>
+                                <%=render partial: "login" , locals: { stock: stock } %>
+
+
                                 <%end%>
                             </div>
                             <%= render partial: "likes/like" , locals: { stock: stock }%>
@@ -43,3 +49,4 @@
         </div>
       </div>
       <% end %>
+       。

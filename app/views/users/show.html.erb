@@ -6,8 +6,14 @@
   <% @user.stocks.each do |stock| %>
     <div class="inline">
       <p>
-        <p>
-          <%= stock.title %><%= link_to '編集', stock_path(stock.id) %>
+      <%= stock.title %>
+      <%if user_signed_in? %>
+        <p> <% if user_signed_in? && current_user.id == stock.user_id %>
+          <%= link_to '編集', stock_path(stock.id) %><br>
+            <% else %>
+              <%= link_to '詳細', stock_path(stock.id) %><br>
+                <%end%>
+          
         </p>
         <% stock.mees.order(published_at: "ASC").each do |m|%>
           <div class="comment">
@@ -21,8 +27,12 @@
           
           
              <% end %>
+             <%else%>
+             <%=render partial: "stocks/login" , locals: { stock: stock } %>
+
+             <% end %>
               <%#= 投稿ごとのやってみたい挿入予定%>
-             👍総数<%= stock.liked_users.count %>
+             <br><br>👍総数<%= stock.liked_users.count %>
              <%#= 投稿ごとのやってみたい挿入予定%>
     </div>
     <% end %>
@@ -30,7 +40,8 @@
   <h3>やってみたい👍している投稿</h3>
 <% @user.liked_stocks.each do |stock| %>
 
-  <p><%= link_to stock.title %> 　👍総数 (<%= stock.liked_users.count %>)　By<%=link_to stock.user.name%></p>
+  <p><%= link_to stock.title,user_path(stock.user.id) %> <br>
+  　👍総数 (<%= stock.liked_users.count %>)　By<%=link_to stock.user.name,user_path(stock.user.id)%></p>
  
 <% end %>
 
@@ -38,7 +49,7 @@
    <div class='column--r'>
  <div id="side-a">
 <%#= 部分テンプレート%>
-自分の投稿に対しての　👍総数　<%=@likes_count%>
+👍総数　<%=@likes_count%>
  <%#= 部分テンプレート%>
  <%#=ユーザーランキング実装予定%>
  </div>  

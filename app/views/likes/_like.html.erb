@@ -1,5 +1,5 @@
 
-<% if@mees.length != 0 %>
+<%# if@mees.length != 0 %>
 <% if user_signed_in?  %>
      <% if current_user.already_liked?(stock) %>
 <div id="comments_area">
@@ -16,10 +16,8 @@
      <%end%>
      </div>
      <% else %>
-       <%= link_to "ログイン" , new_user_session_path %>　/　<%= link_to "新規登録" , new_user_registration_path %>
-       <br><%= link_to "ユーザー登録" , new_user_registration_path%>をしたら「やってみたい👍」機能や<br>自分のルーティンを作成することができます。
-       
+
      <% end %>
    </div>
-   <% end %> 
+   <%# end %> 
    </div>

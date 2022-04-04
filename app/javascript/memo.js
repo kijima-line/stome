@@ -1,9 +1,10 @@
-window.onload = function () {
+window.addEventListener('DOMContentLoaded', function() {
   $(function() {
     var topBtn = $('#side-a'); 
-    topBtn.hide();
+    topBtn.hide().fadeIn("#side-a");
     //スクロールが100に達したら表示
-    $(window).scroll(function () {
+
+    $(window).on('scroll', function () {
         if ($(this).scrollTop() > 200) {
             topBtn.fadeIn();
         } else {
@@ -11,4 +12,4 @@ window.onload = function () {
         }
     });
   });
-};
+});
