@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
   $(function() {
     var topBtn = $('#side-a'); 
-    topBtn.hide().fadeIn("#side-a");
+    topBtn.hide().fadeIn("");
     //スクロールが100に達したら表示
 
     $(window).on('scroll', function () {
@@ -13,3 +13,4 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+'use strict'
