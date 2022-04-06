@@ -532,6 +532,22 @@ nav ul li a {
 
 }
 
+#side-c {
+    width: 35%;
+    height: auto;
+
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+    color: #111111;
+    position: fixed;
+    bottom: 0px;
+    right: 7vh;
+    /* 要素をスクロールに応じて固定 */
+
+    padding: 20px;
+
+}
+
 //未ログインの時ぼかし
 #side-b {
     -ms-filter: blur(6px);
@@ -574,3 +590,36 @@ div.index_m {
     border: 1px #a2a6ac solid;
     backdrop-filter: blur(12px);
 }
+
+.user {
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background-color: #89baeb;
+    width: 1em;
+    height: 1em;
+    font-size: 100px;
+    overflow: hidden;
+  }
+  
+  .user::before,
+  .user::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #3388dd;
+    content: "";
+  }
+  
+  .user::before {
+    top: 0.15em;
+    width: 0.4em;
+    height: 0.4em;
+  }
+  
+  .user::after {
+    bottom: -0.4em;
+    width: 0.8em;
+    height: 0.8em;
+  }

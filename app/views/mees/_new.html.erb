@@ -6,7 +6,7 @@
   <%if  user_signed_in?%>
   <% @mees.each do |mees| %>
     <li> ⏰　
-      　<%= l mees.published_at%> →　
+      　<%= l mees.published_at%>　→　
         <%= mees.text%>　
           <% if user_signed_in? && current_user.id == @stock.user_id %>
             <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>　

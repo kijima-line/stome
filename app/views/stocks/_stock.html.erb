@@ -1,6 +1,9 @@
 <% @stocks.each do |stock| %>
   <div class="inline-block_test">
     <div class="inline">
+    <%#=ここにアイコン%>
+      <%#=span class="user"></span>
+      <%#=ここにアイコン%>
       <%= link_to "#{stock.user.name}" ,user_path(stock.user.id) %>さんの投稿
         <% if user_signed_in? && current_user.id == stock.user_id %>
           <%= link_to '編集', stock_path(stock.id) %><br>
@@ -17,9 +20,9 @@
                           <% end %>
                             <div class="index_m">
                               <% stock.mees.order(published_at: "ASC").each do |m|%>
-                                <p> ⏰
-                                  <%= l m.published_at %>
-                                    <%= m.text%>
+                                <p> ⏰　<%= l m.published_at %>　〜　<%= m.text%><br>
+                                
+                                  
                                 </p>
                                 <%end%>
 
