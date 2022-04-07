@@ -1,14 +1,18 @@
 <h2 class="heading06" data-en="routine">
-  <%= @user.name %>さんの投稿一覧</p>
+      <%#=ここにアイコン%>
+      <%#=span class="user"></span>
+      <%#=ここにアイコン%>
+<%= @user.name %>さんの投稿一覧</p>
 </h2>
-
+<%#=もし投稿がなければ%>
+<%#= if @stocks.length != nil %>
+<%#=もし投稿がなければ%>
   <div class="inline-block_test">
   <% @user.stocks.each do |stock| %>
     <div class="inline">
-      <p>
-      <%= stock.title %>
+      <p><%= stock.title %>
       <%if user_signed_in? %>
-        <p> <% if user_signed_in? && current_user.id == stock.user_id %>
+     <% if user_signed_in? && current_user.id == stock.user_id %>
           <%= link_to '編集', stock_path(stock.id) %><br>
             <% else %>
               <%= link_to '詳細', stock_path(stock.id) %><br>
@@ -18,14 +22,8 @@
         <% stock.mees.order(published_at: "ASC").each do |m|%>
           <div class="comment">
             <p class="user-info"> </p>
-            <p>
-              <%= l m.published_at%>
-                <%= m.text%>
-            </p>
-         
+            <p><%= l m.published_at%><%= m.text%></p>
           </div>
-          
-          
              <% end %>
              <%else%>
              <%=render partial: "stocks/login" , locals: { stock: stock } %>
@@ -36,15 +34,18 @@
              <%#= 投稿ごとのやってみたい挿入予定%>
     </div>
     <% end %>
-  
-  <h3>やってみたい👍している投稿</h3>
+
+
+     <div class='column--r'>
+ <div id="side-c">
+  <h4><%=@user.name%>がやってみたい👍している投稿</h4>
 <% @user.liked_stocks.each do |stock| %>
 
-  <p><%= link_to stock.title,user_path(stock.user.id) %> <br>
+  <p><%= link_to stock.title,stock_path(stock.id) %> <br>
   　👍総数 (<%= stock.liked_users.count %>)　By<%=link_to stock.user.name,user_path(stock.user.id)%></p>
  
 <% end %>
-
+</div></div>
   <%#= 自分のやってみたいした投稿表示 %>
    <div class='column--r'>
  <div id="side-a">
