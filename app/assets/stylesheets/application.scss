@@ -113,10 +113,10 @@ footer {
 
 /* 見出し */
 
-h1 {
-    padding-left: 30px;
-    background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
-}
+// .h1 {
+//     padding-left: 30px;
+//     background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
+// }
 
 .heading06 {
     font-family: "Kokoro";
@@ -353,9 +353,6 @@ ul {
     margin: 0;
 }
 
-li {
-    list-style-type: none;
-}
 
 a {
     color: rgb(47, 103, 255);
@@ -368,16 +365,14 @@ a {
 
 /* ナビ */
 
-.logo {
-    padding: 10px 20px;
-    display: inline-block;
-}
 
 nav {
     margin-left: auto;
 }
 
-nav ul {
+nav ul {  padding: 10px 20px;
+    display: inline-block;
+    list-style-type: none;
     display: flex;
 }
 

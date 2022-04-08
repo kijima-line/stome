@@ -32,9 +32,6 @@ class StocksController < ApplicationController
     render :index
   end
   end
-  def edit
-
-  end
   
   def update
     stock = Stock.find(params[:id])
