@@ -50,7 +50,7 @@ class StocksController < ApplicationController
      @stock = Stock.find(params[:id])
      @mees = @stock.mees.order("published_at ASC").includes(:user)
      @mee = Mee.new
-     like = @stock.likes
+     #like = @stock.likes
      
 
   end
