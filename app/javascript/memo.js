@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('turbolinks:load', function() {
   $(function() {
     var topBtn = $('#side-a'); 
     topBtn.hide().fadeIn("");

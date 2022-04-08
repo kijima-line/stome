@@ -30,9 +30,9 @@ header {
     right: 60px;
     background-color: blue;
     color: white;
-    top: 50vh;
+    // top: 50vh;
     /*fixedを設定して固定*/
-    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+    // background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
     /*高さ指定*/
     width: 100%;
     /*横幅指定*/
@@ -113,21 +113,20 @@ footer {
 
 /* 見出し */
 
-h1 {
-    padding-left: 30px;
-    background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
-}
+// .h1 {
+//     padding-left: 30px;
+//     background: url(https://japaclip.com/files/icon-bean-bulb.png) no-repeat left center;
+// }
 
 .heading06 {
     font-family: "Kokoro";
     color: rgb(150, 144, 112);
     background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) fixed, url(https://japaclip.com/files/icon-bean-bulb.png) fixed;
     position: relative;
-    padding-top: 70px;
+    padding-top: 60px;
     padding-bottom: 50px;
     font-size: 26px;
     text-align: center;
-    font-size: 50px;
     z-index: 0;
 }
 
@@ -354,9 +353,6 @@ ul {
     margin: 0;
 }
 
-li {
-    list-style-type: none;
-}
 
 a {
     color: rgb(47, 103, 255);
@@ -369,17 +365,15 @@ a {
 
 /* ナビ */
 
-.logo {
-    padding: 10px 20px;
-    display: inline-block;
-}
 
 nav {
     margin-left: auto;
 }
 
-nav ul {
-    display: flex;
+nav ul {  padding: 10px 20px;
+    display: inline-block;
+    list-style-type: none;
+
 }
 
 nav ul li a {
@@ -481,7 +475,7 @@ nav ul li a {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     /* かど指定 */
-    font-family: "Kokoro";
+    //font-family: "Kokoro";
     padding: 20px;
     /* 余白指定 */
     box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
@@ -493,8 +487,8 @@ nav ul li a {
     color: #000; // float: left;  /* 右、左指定 */
     list-style: none;
     font-size: 21px;
-    margin: 30px; //margin:  0 auto;            /* 中央寄せ */
-
+    margin-left: 30px; //margin:  0 auto;            /* 中央寄せ */
+    margin-top: 30px; 
 }
 
 
