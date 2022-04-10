@@ -12,7 +12,6 @@ RSpec.describe Stock, type: :model do
       end
     end
     context '投稿ができない場合' do
-    
       it 'ユーザーが紐付いていなければ投稿できない' do
         @stock.user = nil
         @stock.valid?

@@ -1,3 +1,4 @@
+'use strict'
 window.addEventListener('turbolinks:load', function() {
   $(function() {
     var topBtn = $('#side-a'); 
@@ -13,4 +14,3 @@ window.addEventListener('turbolinks:load', function() {
     });
   });
 });
-'use strict'

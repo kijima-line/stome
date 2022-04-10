@@ -70,3 +70,6 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 gem 'font-awesome-sass'
+group :development do
+  gem 'rubocop', require: false
+end
