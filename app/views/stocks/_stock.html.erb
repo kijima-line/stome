@@ -32,7 +32,7 @@
 
                                 <%end%>
                             </div>
-                            <%= render partial: "likes/like" , locals: { stock: stock }%>
+                            <p id="favorite_buttons_<%= stock.id %>"><%= render partial: "likes/like" , locals: { stock: stock }%></p>
     </div>
   </div>
   <%end%>

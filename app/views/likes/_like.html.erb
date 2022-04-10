@@ -5,13 +5,13 @@
 <div id="comments_area">
           <div class="option" >
      <div class="report-btn">
-       <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :delete,remote: true ,class:"button_like button_orange"%></p>
+       <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :delete,remote: true %></p>
      </div>
 
      <%else%>
     <div class="option" >
      <div class="favorite-btn">
-       <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :post,remote: true ,class:"button_like button_pink"%></p>
+       <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :post,remote: true %></p>
      </div>
      <%end%>
      </div>
