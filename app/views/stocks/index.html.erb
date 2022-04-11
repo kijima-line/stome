@@ -21,4 +21,6 @@
           <%#= 部分テンプレート%>
     </div>
   </div>
-  
+  <% if user_signed_in?  %>
+ <%= link_to "作成する", new_stock_path, class: "purchase-btn" ,id: "submit"%>
+ <%end%>

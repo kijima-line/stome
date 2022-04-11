@@ -11,9 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap.min.css
-
+// require_tree .
+// require_self
  */
 @import "bootstrap";
+@import "stocks";
 
 header {
     background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
