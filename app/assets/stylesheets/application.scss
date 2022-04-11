@@ -15,7 +15,9 @@
 // require_self
  */
 @import "bootstrap";
+//この記述にてコントローラーのcssをインポート
 @import "stocks";
+//この記述にてコントローラーのcssをインポート
 
 header {
     background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
