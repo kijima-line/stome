@@ -1,44 +1,35 @@
 <% @stocks.each do |stock| %>
-  <div class="inline-block_test">
-    <div class="inline">
-    <%#=ここにアイコン%>
-      <%#=span class="user"></span>
+
       <%#=ここにアイコン%>
-      <%= link_to "#{stock.user.name}" ,user_path(stock.user.id) %>さんの投稿
-        <% if user_signed_in? && current_user.id == stock.user_id %>
-          <%= link_to '編集', stock_path(stock.id) %><br>
-            <% else %>
-              <%= link_to '詳細', stock_path(stock.id) %><br>
-                <%end%> <br>
-                  <h3>
-                    <%= stock.title %>
-                  </h3>
-                  <% if user_signed_in?%>
-        
-                    <% if user_signed_in? && current_user.id == stock.user_id %>
- 
+        <%#=span class="user"></span>
+      <%#=ここにアイコン%>
+          <%= link_to "#{stock.user.name}" ,user_path(stock.user.id) %>さんの投稿
+            <% if user_signed_in? && current_user.id == stock.user_id %>
+              <%= link_to '編集', stock_path(stock.id) %><br>
+                <% else %>
+                  <%= link_to '詳細', stock_path(stock.id) %><br>
+                    <%end%> <br>
+                      <h3>
+                        <%= stock.title %>
+                      </h3>
+                      <% if user_signed_in?%>
+                        <% if user_signed_in? && current_user.id == stock.user_id %>
                           <% end %>
-                            <div class="index_m">
+               
                               <% stock.mees.order(published_at: "ASC").each do |m|%>
-                                <p> ⏰　<%= l m.published_at %>　〜　<%= m.text%><br>
-                                
-                                  
-                                </p>
+                                <p> ⏰
+                                  <%= l m.published_at %>　〜
+                                    <%= m.text%><br></p>
                                 <%end%>
+                                  <%else%>
+                                    <%=render partial: "login" , locals: { stock: stock } %>
+                                      <%end%>
+                                       <%= render partial: "likes/like" , locals: { stock: stock }%>
+         
 
-                                <%else%>
-                                <%=render partial: "login" , locals: { stock: stock } %>
-
-
-                                <%end%>
-                            </div>
-                            <p id="favorite_buttons_<%= stock.id %>"><%= render partial: "likes/like" , locals: { stock: stock }%></p>
-    </div>
-  </div>
   <%end%>
     <% if @stocks.length == 0 %>
-      <div class="inline-block_test">
-        <div class="inline">
+
           <p>じゅんいちさんの投稿<br>こちらはサンプルです</p>
           <h4>夕方ルーティン</h4>
           <p>⏰　18:00 ランニング</p>
@@ -49,7 +40,4 @@
           <p>⏰　20:30 歯磨き</p>
           <p>⏰　20:50 寝かしつけ</p>
           <p>⏰　21:30 就寝</p>
-        </div>
-      </div>
       <% end %>
-       

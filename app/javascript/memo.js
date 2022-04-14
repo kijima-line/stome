@@ -1,7 +1,7 @@
-'use strict'
+
 window.addEventListener('turbolinks:load', function() {
   $(function() {
-    var topBtn = $('#side-a'); 
+    let topBtn = $('#side-a'); 
     topBtn.hide().fadeIn("");
     //スクロールが100に達したら表示
 

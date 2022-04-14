@@ -3,22 +3,11 @@
 <div id='hideMe'><%= notice %></div>
 <h2 class="heading06" data-en="routine"><span class="buruburu">🎉 </span>最新ルーティン</h2>
 
-<div class="search-form">
-<%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-</div>
 
 
-  <div class='column--l'>
+
+
     <%= render partial: "stock" %>
-  </div>
-  <div class='column--r'>
-    <div id="side-a">
-      <%#= 部分テンプレート%>
-        <%= render partial: "rank" %>
-          <%#= 部分テンプレート%>
-    </div>
-  </div>
-  
+
+
+
