@@ -2,22 +2,18 @@
 <%# if@mees.length != 0 %>
 <% if user_signed_in?  %>
      <% if current_user.already_liked?(stock) %>
-<div id="comments_area">
-          <div class="option" >
-     <div class="report-btn">
+
        <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :delete,remote: true,id:"iine" %></p>
-     </div>
+
 
      <%else%>
-    <div class="option" >
-     <div class="favorite-btn">
+
        <p> <span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :post,remote: true %></p>
-     </div>
+
      <%end%>
-     </div>
+
      <% else %>
 
      <% end %>
-   </div>
+
    <%# end %> 
-   </div>

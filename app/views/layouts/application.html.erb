@@ -11,30 +11,51 @@
 </head>
 
 <body>
-<header>
-  <div class="logo">
-    <h1>
-      <span class="buruburu"><%= link_to "StoMee💡", root_path,class:"userList" %> </span>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <% if user_signed_in? %>
-        <li>
-        <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
-          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
-        </li>
-        <% else%>
-          <li>
-            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
-              <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
-          </li>
-          <% end %>
-    </ul>
-  </nav>
-</header>
-<div class="wrapper">
+<div class="flexbox">
+  <section class="list">
+      <!-- カラム 1 ここから -->
+      <h1><%= link_to "StoMe💡", root_path %></h1>
+    <nav>
+
+        <ul>
+            <% if user_signed_in? %>
+                <li>
+                    <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
+                        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
+                            <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
+                </li>
+                <% else%>
+                    <li>
+                        <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
+                            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
+                    </li>
+                    <% end %>
+        </ul>
+    </nav>
+      <!-- カラム 1 ここまで -->
+  </section>
+  <article class="main">
+      <!-- カラム 2 ここから -->
 <%= yield %>
-  </div>
+      <!-- カラム 2 ここまで -->
+  </article>
+  <section class="side">
+      <!-- カラム 3 ここから -->
+         <%#=検索窓%>
+    <div class="search-form">
+        <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
+            <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
+                <%= form.submit "検索", class: "search-btn" %>
+                    <% end %>
+    </div>
+    <%#=検索窓%>
+        <div id="side-a">
+      <%#= 部分テンプレート%>
+        <%#= render partial: "rank" %>
+          <%#= 部分テンプレート%>
+    </div>
+      <!-- カラム 3 ここまで -->
+  </section>
+</div>
 </body>
 </html>
