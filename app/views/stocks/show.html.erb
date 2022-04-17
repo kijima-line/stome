@@ -13,7 +13,7 @@
               <%= f.text_field :text , class: "comment-text"%>
                 <%= f.submit "ルーティンを追加", class: "comment-submit" %>
                   <% if @mees.length != 0 %>
-                    <p style="text-align:right">
+                    <p>
                       <%= link_to "投稿完了" ,root_path ,class:"btn btn-info" ,data: {confirm:"トップページへ移動します"}%>
                     </p>
                     <% end %>
@@ -22,7 +22,6 @@
                           <%= render partial: "likes/like" , locals: { stock: @stock }%>
   </ol>
   </p>
-  <hr>
   <%= render partial: "mees/new" %>
     <%# 要素 終わり%>
       <% if @mees.length == 0 %>
