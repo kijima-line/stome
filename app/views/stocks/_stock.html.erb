@@ -24,9 +24,11 @@
                                   <%else%>
                                     <%=render partial: "login" , locals: { stock: stock } %>
                                       <%end%>
+                                       <div id="likes_buttons_<%= stock.id %>">
                                        <%= render partial: "likes/like" , locals: { stock: stock }%>
+                                       </div>
          
-</div>
+      </div>
   <%end%>
     <% if @stocks.length == 0 %>
 

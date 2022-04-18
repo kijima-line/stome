@@ -3,8 +3,7 @@
 <% if user_signed_in?  %>
      <% if current_user.already_liked?(stock) %>
 
-       <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :delete,remote: true,id:"iine" %></p>
-
+       <p><span>やってみたい👍　</span><%=link_to stock.likes.count, stock_likes_path(stock), method: :delete,remote: true%></p>
 
      <%else%>
 
@@ -13,7 +12,7 @@
      <%end%>
 
      <% else %>
-
+    
      <% end %>
 
    <%# end %> 
