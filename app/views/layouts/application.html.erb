@@ -1,61 +1,88 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="ja">
 <head>
-  <title>Stome</title>
-  <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-      <link href="https://fonts.googleapis.com/css?family=Caveat rel="stylesheet">
-      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-            <%= stylesheet_link_tag 'application' %>
-   <%= javascript_pack_tag 'application' %>
+    <title>Stome</title>
+    <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+            <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= stylesheet_link_tag 'application' %>
+                    <%= javascript_pack_tag 'application' %>
 </head>
-
 <body>
-<div class="flexbox">
-  <section class="list">
-      <!-- カラム 1 ここから -->
-      <h1><%= link_to "StoMe💡", root_path %></h1>
-    <nav>
+    <div class="flexbox">
+        <div class="list">
+            <!-- カラム 1 ここから -->
+            <nav>
+                <header class="header">
+                    <!-- ヘッダー内容 -->
+                    <h1>
+                        <%= link_to "StoMe💡", root_path %>
+                    </h1>
+                </header>
+                <ul>
+                    <% if user_signed_in? %>
+                        <li>
+                            <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
+                                <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
+                                    <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
+                        </li>
+                        <% else%>
+                            <li>
+                                <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
+                                    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
+                            </li>
+                            <% end %>
+                </ul>
+            </nav>
+            <!-- カラム 1 ここまで -->
+        </div>
+        <article class="main">
+            <!-- カラム 2 ここから -->
+            <%= yield %>
+                <!-- カラム 2 ここまで -->
+        </article>
+        <div class="side">
+            <!-- カラム 3 ここから -->
+            <%#=検索窓%>
+                <div class="search-form">
+                    <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
+                        <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
+                            <%= form.submit "検索", class: "search-btn" %>
+                                <% end %>
+                </div>
+                <%#=検索窓%>
+                    <!-- カラム 3 ここまで -->
+        </div>
+    </div>
+    <!-- スマホ表示-->
 
-        <ul>
-            <% if user_signed_in? %>
-                <li>
-                    <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
-                        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
-                            <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
-                </li>
-                <% else%>
-                    <li>
-                        <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
-                            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
-                    </li>
-                    <% end %>
-        </ul>
-    </nav>
-      <!-- カラム 1 ここまで -->
-  </section>
-  <article class="main">
-      <!-- カラム 2 ここから -->
-<%= yield %>
-      <!-- カラム 2 ここまで -->
-  </article>
-  <section class="side">
-      <!-- カラム 3 ここから -->
-         <%#=検索窓%>
-    <div class="search-form">
-        <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
-            <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
-                <%= form.submit "検索", class: "search-btn" %>
-                    <% end %>
-    </div>
-    <%#=検索窓%>
-        <div id="side-a">
-      <%#= 部分テンプレート%>
-        <%#= render partial: "rank" %>
-          <%#= 部分テンプレート%>
-    </div>
-      <!-- カラム 3 ここまで -->
-  </section>
-</div>
+    
+    <ul class="menu">
+        <li>
+            <%= link_to root_path do%> <i class="fa-solid fa-house"></i> <span class="iconname">ホーム</span>
+                <%end%>
+        </li>
+        <li>
+            <%= link_to new_stock_path,id: "submit" do%> <i class="fa-solid fa-pen"></i><br> <span class="iconname">作成する</span>
+                <%end%>
+        </li>
+        <li>
+            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-user"></i> <span class="iconname">マイページ</span>
+                <% end %>
+        </li>
+        <li>
+            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-star"></i> <span class="iconname">お気に入り</span>
+                <% end %>
+        </li>
+        <li>
+            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-right-from-bracket"></i><span class="iconname">ログアウト</span>
+                <% end %>
+        </li>
+    </ul>
+    <!-- スマホ表示-->
+    <!-- タブレット-->
+    
+    <!-- タブレット-->
 </body>
 </html>

@@ -2,15 +2,17 @@ class StocksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_stock, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_lank, only: [:index, :new]
 
   def index
     @stocks = Stock.order('created_at DESC').includes(:user)
     @mees = Mee.order('published_at ASC').includes(:user)
-    @all_ranks = Stock.find(Like.group(:stock_id).order('count(stock_id) desc').limit(3).pluck(:stock_id))
+    
   end
 
   def new
     @stock = Stock.new
+    
   end
 
   def create
@@ -60,6 +62,10 @@ class StocksController < ApplicationController
 
   def set_stock
     @stock = Stock.find(params[:id])
+  end
+
+  def set_lank
+    @all_ranks = Stock.find(Like.group(:stock_id).order('count(stock_id) desc').limit(3).pluck(:stock_id))
   end
 
   def move_to_index

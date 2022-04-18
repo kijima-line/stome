@@ -1,15 +1,14 @@
-<h2 class="heading06" data-en="routine">
+
       <%#=ここにアイコン%>
       <%#=span class="user"></span>
       <%#=ここにアイコン%>
 <%= @user.name %>さんの投稿一覧</p>
-</h2>
 <%#=もし投稿がなければ%>
 <%#= if @stocks.length != nil %>
 <%#=もし投稿がなければ%>
-  <div class="inline-block_test">
+
   <% @user.stocks.each do |stock| %>
-    <div class="inline">
+<div class="mate">
       <p><%= stock.title %>
       <%if user_signed_in? %>
      <% if user_signed_in? && current_user.id == stock.user_id %>
@@ -20,10 +19,10 @@
           
         </p>
         <% stock.mees.order(published_at: "ASC").each do |m|%>
-          <div class="comment">
+   
             <p class="user-info"> </p>
             <p><%= l m.published_at%><%= m.text%></p>
-          </div>
+
              <% end %>
              <%else%>
              <%=render partial: "stocks/login" , locals: { stock: stock } %>
