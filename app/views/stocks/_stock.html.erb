@@ -1,5 +1,5 @@
 <% @stocks.each do |stock| %>
-
+<div class="mate">
       <%#=ここにアイコン%>
         <%#=span class="user"></span>
       <%#=ここにアイコン%>
@@ -26,7 +26,7 @@
                                       <%end%>
                                        <%= render partial: "likes/like" , locals: { stock: stock }%>
          
-
+</div>
   <%end%>
     <% if @stocks.length == 0 %>
 

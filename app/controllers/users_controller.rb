@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @stocks = Stock.order('created_at DESC').includes(:user)
     @mees = Mee.order('published_at ASC').includes(:user)
-
     @likes = Like.includes(:user)
     @user_stocks = @user.stocks
     @likes_count = 0
