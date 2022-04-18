@@ -26,8 +26,35 @@
 .header {
     display: block;
     width: 100%;
+    text-decoration: none; /* 文字の下線を消す */
 }
 
+/* 共通 */
+/* btn */
+.btn-a{
+    padding: 4em 0.5em ;
+  }
+.btn {
+
+    margin: 20px;
+    display: inline-block;
+    padding: 1em 3em;
+    background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
+    box-shadow: 0 5px 0 #f396a1; /* 影の太さ・色 */
+    border-radius: 60px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* 文字の下線を消す */
+    
+    
+  }
+  .btn:hover {
+    font-weight:bold;
+    color: rgb(255, 255, 255);
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  /* btn */
 .flexbox {
     display: flex;
     justify-content: center;
@@ -48,12 +75,14 @@
     width: auto;
     margin: auto;
     position: absolute;
+    
 }
 
 .side {
+    background: linear-gradient(-45deg, #EA225E, #C22286, #612E8D);
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     width: 40vh;
-    background: #fea;
+
     box-sizing: border-box;
     top: 0px;
     height: 100%;
@@ -62,9 +91,9 @@
     overflow: auto;
 }
 
-.list {
-    width: 45vh;
-    background: #afd;
+.list {background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
+    width: 40vh;
+
     box-sizing: border-box;
     top: 0px;
     height: 100%;
@@ -93,6 +122,11 @@
     /* 要素をスクロールに応じて固定 */
     z-index: 1;
     padding: 20px;
+}
+//ぼかし
+#side-b {
+    -ms-filter: blur(6px);
+    filter: blur(6px);
 }
 a {
     text-decoration: none !important;

@@ -13,28 +13,25 @@
     <div class="flexbox">
         <div class="list">
             <!-- カラム 1 ここから -->
-            <nav>
-                <header class="header">
-                    <!-- ヘッダー内容 -->
-                    <h1>
-                        <%= link_to "StoMe💡", root_path %>
-                    </h1>
-                </header>
-                <ul>
-                    <% if user_signed_in? %>
-                        <li>
-                            <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-info" %>
-                                <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-info" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
-                                    <%= link_to "作成する", new_stock_path, class: "btn btn-outline-info" ,id: "submit"%>
-                        </li>
-                        <% else%>
-                            <li>
-                                <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info" %>
-                                    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info" %>
-                            </li>
-                            <% end %>
-                </ul>
-            </nav>
+               <header class="header">
+        <!-- ヘッダー内容 -->
+        <h1>
+            <%=link_to "StoMe💡", root_path %>
+        </h1>
+    </header>
+            <div class="btn-a">
+ 
+    <% if user_signed_in? %>
+     <%= button_to "ルーティン", new_stock_path, class: "btn" ,id: "submit"%>
+        <%= button_to "マイページ", user_path(current_user), class: "btn" %>
+            <%= button_to "ログアウト", destroy_user_session_path, class: "btn" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
+               
+                    <% else%>
+                        <%= button_to "ログイン", new_user_session_path, class: "btn" %>
+                            <%= button_to "新規登録", new_user_registration_path, class: "btn" %>
+                                <% end %>
+</div>
+           
             <!-- カラム 1 ここまで -->
         </div>
         <article class="main">
