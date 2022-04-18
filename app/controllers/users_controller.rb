@@ -15,5 +15,6 @@ class UsersController < ApplicationController
     @user_stocks.each do |stock|
       @likes_count += stock.likes.count
     end
+    @stocks = current_user.stocks
   end
 end

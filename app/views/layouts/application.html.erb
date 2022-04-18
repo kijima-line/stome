@@ -57,7 +57,7 @@
     </div>
     <!-- スマホ表示-->
 
-    
+    <% if user_signed_in? %>
     <ul class="menu">
         <li>
             <%= link_to root_path do%> <em class="fa-solid fa-house"></em> <span class="iconname">ホーム</span>
@@ -80,6 +80,7 @@
                 <% end %>
         </li>
     </ul>
+    <% end %>
     <!-- スマホ表示-->
     <!-- タブレット-->
     
