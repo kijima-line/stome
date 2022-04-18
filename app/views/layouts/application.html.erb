@@ -72,14 +72,24 @@
                 <% end %>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-star"></em> <span class="iconname">お気に入り</span>
+            <%= link_to  user_path(current_user) do%> 
+            <em class="fa-solid fa-star"></em> <span class="iconname">お気に入り</span>
                 <% end %>
         </li>
         <li>
             <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログアウト</span>
                 <% end %>
         </li>
-    </ul>
+   </ul>
+    <%else%> <ul class="menu">
+                                     <li><%= link_to new_user_session_path do %>
+                                    <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログイン</span>
+
+                                       <% end %>
+                                        </li> <li>
+                                    <%= link_to new_user_registration_path do %>
+                                    <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">新規登録</span>
+                                       <% end %> </li> </ul>
     <% end %>
     <!-- スマホ表示-->
     <!-- タブレット-->
