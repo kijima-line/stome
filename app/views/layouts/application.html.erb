@@ -60,23 +60,23 @@
     
     <ul class="menu">
         <li>
-            <%= link_to root_path do%> <i class="fa-solid fa-house"></i> <span class="iconname">ホーム</span>
+            <%= link_to root_path do%> <em class="fa-solid fa-house"></em> <span class="iconname">ホーム</span>
                 <%end%>
         </li>
         <li>
-            <%= link_to new_stock_path,id: "submit" do%> <i class="fa-solid fa-pen"></i><br> <span class="iconname">作成する</span>
+            <%= link_to new_stock_path,id: "submit" do%> <em class="fa-solid fa-pen"></em><br> <span class="iconname">作成する</span>
                 <%end%>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-user"></i> <span class="iconname">マイページ</span>
+            <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-user"></em> <span class="iconname">マイページ</span>
                 <% end %>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-star"></i> <span class="iconname">お気に入り</span>
+            <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-star"></em> <span class="iconname">お気に入り</span>
                 <% end %>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> <i class="fa-solid fa-right-from-bracket"></i><span class="iconname">ログアウト</span>
+            <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログアウト</span>
                 <% end %>
         </li>
     </ul>
