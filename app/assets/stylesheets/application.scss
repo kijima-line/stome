@@ -21,7 +21,37 @@
 @import "font-awesome";
 //この記述にてコントローラーのcssをインポート
 //この記述にてコントローラーのcssをインポート
-
+//ボタン
+.btn-a{
+    position:fixed;
+    bottom: 0;
+list-style: none;
+padding: 4rem 3rem;
+}
+.btn { 
+    width: 100%;
+    margin: 10px;
+    display:block;
+    padding: 1em 2em;
+    background:  #E8630A;
+    box-shadow:  #E8630A; /* 影の太さ・色 */
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* 文字の下線を消す */
+  }
+  .btn:hover {
+    background-color: #E6A1C0;
+    font-weight: bold;
+    color: #FFF;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+//ぼかし
+#side-b {
+    -ms-filter: blur(6px);
+    filter: blur(6px);
+}
 /* 共通 */
 .header {
     display: block;
@@ -51,9 +81,10 @@
 }
 
 .side {
+    background: linear-gradient(#05FBFF, #1E00FF);
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     width: 40vh;
-    background: #fea;
+
     box-sizing: border-box;
     top: 0px;
     height: 100%;
@@ -63,8 +94,9 @@
 }
 
 .list {
+    background: linear-gradient(#05FBFF, #1E00FF);
     width: 45vh;
-    background: #afd;
+ 
     box-sizing: border-box;
     top: 0px;
     height: 100%;
@@ -108,11 +140,12 @@ a {
 }
 
 .menu li {
+font-size: 2.8rem;
   float: left;
   display: table;
   table-layout: fixed;
-  width: 20%;
-  padding: 15px;
+  width:   20%;
+  padding: 18px;
   list-style: none;
   text-align: center;
 
@@ -173,4 +206,9 @@ display: none !important;
   }
   /*　画面サイズが480pxからはここを読み込む　*/
 
+  }
+  .search-input{
+    border-radius: 10px;
+    width: 80%;
+    height: 50px;
   }
