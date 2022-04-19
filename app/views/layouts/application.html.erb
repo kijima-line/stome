@@ -8,38 +8,43 @@
             <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
                 <%= stylesheet_link_tag 'application' %>
                     <%= javascript_pack_tag 'application' %>
+                    <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="flexbox">
         <div class="list">
             <!-- カラム 1 ここから -->
-            <nav>
-                <header class="header">
-                    <!-- ヘッダー内容 -->
-                    <h1>
-                        <%= link_to "StoMe💡", root_path %>
-                    </h1>
-                </header>
-                <ul class="btn-a">
-                    <% if user_signed_in? %>
-                        <li>
-                            <%= link_to "マイページ", user_path(current_user), class: "btn" %>
-                             </li> 
-                             <li>
-                                <%= link_to "ログアウト", destroy_user_session_path, class: "btn" ,method: :get, data: {confirm:"ログアウトしますか？"} %>
-                                 </li> <li>
-                                    <%= link_to "ルーティン", new_stock_path, class: "btn" ,id: "submit"%>
-                        </li>
+       <nav>
+    <header class="header">
+        <!-- ヘッダー内容 -->
+        <h1>
+            <%= link_to "StoMe💡", root_path %>
+        </h1>
+    </header>
+    <ul class="btn-a">
+        <% if user_signed_in? %>
+            <li>
+                <%= link_to  user_path(current_user),class:"btn" do%><em class="fa-solid fa-user"></em><span class="iconname">　マイページ</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to  user_path(current_user),class:"btn" ,data: {confirm:"ログアウトしますか？"} do%><em class="fa-solid fa-right-from-bracket"></em><span class="iconname">　ログアウト</span>
+                    <% end %>
+            </li>
+            <li>
+                <%= link_to new_stock_path,class:"btn",id: "submit" do%><em class="fa-solid fa-pen"></em><span class="iconname">　作成する</span>
+                    <%end%>
+            </li>
                         <% else%>
                             <li>
                                 <%= link_to "ログイン", new_user_session_path, class: "btn" %>
-                                 </li>
-                                  <li>
-                                    <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+                            </li>
+                            <li>
+                                <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
                             </li>
                             <% end %>
-                </ul>
-            </nav>
+    </ul>
+</nav>
             <!-- カラム 1 ここまで -->
         </div>
         <article class="main">
@@ -52,7 +57,7 @@
             <%#=検索窓%>
                 <div class="search-form">
                     <%= form_with(url: search_stocks_path, local: true, method: :get, class: "search-form") do |form| %>
-                        <%= form.text_field :keyword, placeholder: "タイトルを検索する", class: "search-input" %>
+                        <%= form.text_field :keyword, placeholder: " 検索する", class: "search-input" %>
                             <%= form.submit "検索", class: "search-btn" %>
                                 <% end %>
                 </div>
@@ -82,7 +87,7 @@
                 <% end %>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログアウト</span>
+            <%= link_to  user_path(current_user), data: {confirm:"ログアウトしますか？"} do%> <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログアウト</span>
                 <% end %>
         </li>
    </ul>

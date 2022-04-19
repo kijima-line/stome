@@ -32,6 +32,7 @@ padding: 4rem 3rem;
     width: 100%;
     margin: 10px;
     display:block;
+    text-align: left;
     padding: 1em 2em;
     background:  #E8630A;
     box-shadow:  #E8630A; /* 影の太さ・色 */
@@ -41,6 +42,9 @@ padding: 4rem 3rem;
     text-decoration: none; /* 文字の下線を消す */
   }
   .btn:hover {
+    width: 100%;
+    margin: 10px;
+    padding: 1em 2em;
     background-color: #E6A1C0;
     font-weight: bold;
     color: #FFF;
@@ -67,17 +71,17 @@ padding: 4rem 3rem;
 }
 
 .main {
-    // width: calc(100% - 100px);
-    // margin: 10px 0;
-    // text-align: center; 
+    // width: );
+    margin: 10px 0;
+    text-align: left; 
     display: inline-block; // background: url("http://life-thewild.com/wp-content/uploads/2016/11/bg_sample.jpg") no-repeat;
     // font-size:14px;
     // line-height: 10;
-    // text-align:center;
-    height: 100px;
-    width: auto;
+    width: aucalc(auto - 200px);
     margin: auto;
     position: absolute;
+    font-size: 16px;
+  
 }
 
 .side {
@@ -155,7 +159,7 @@ font-size: 2.8rem;
 .menu a span {
 
   display: block;
-  font-size: 4px;
+ font-size: 10px;
 }
 //ここからスマホ表示
 @media ( max-width: 1280px) {
@@ -189,8 +193,9 @@ font-size: 2.8rem;
   .menu {
 display: none !important;
   }
-
-
+  .menu a span {
+    font-size: 10px;
+  }
   }
   
   @media screen and (min-width:481px) and ( max-width:1023px) {
@@ -198,12 +203,7 @@ display: none !important;
   }
   
   @media screen and (min-width:380px) { 
-    .mate {
-      font-size: 1.5rem;
-      padding: 40px;
-      margin: 40px;
-      box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-  }
+ 
   /*　画面サイズが480pxからはここを読み込む　*/
 
   }
