@@ -22,6 +22,9 @@
         </h1>
     </header>
     <ul class="btn-a">
+    <%#=                                         <div class="line-it-button" data-lang="ja" data-type="like" data-env="REAL" data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-like-buttons/#create-button"  style="display: none;"></div>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+         <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
         <% if user_signed_in? %>
             <li>
                 <%= link_to  user_path(current_user),class:"btn" do%><em class="fa-solid fa-user"></em><span class="iconname">　マイページ</span>

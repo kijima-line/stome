@@ -35,9 +35,8 @@
     <% end %>
 
 
-     <div class='column--r'>
- <div id="side-c">
-  <h4><%=@user.name%>がやってみたい👍している投稿</h4>
+<div class="mate">
+  <h4><%=@user.name%>さんがやってみたい👍している投稿</h4>
 <% @user.liked_stocks.each do |stock| %>
 
   <p><%= link_to stock.title,stock_path(stock.id) %> <br>
@@ -53,4 +52,3 @@
  <%#= 部分テンプレート%>
  <%#=ユーザーランキング実装予定%>
  </div>  
-</div>
