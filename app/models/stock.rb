@@ -4,6 +4,7 @@ class Stock < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   has_many :mees, dependent: :destroy
+
   def self.search(search)
     if search != ''
       # .includes(:mees).whereでストックのなかに集約 ORで繋ぎmees.textを検索可能にした

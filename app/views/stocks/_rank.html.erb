@@ -6,10 +6,7 @@
  <p><%= link_to stock.title,stock_path(stock)  %>　👍総数<%= stock.likes.count %> </p>
  <%end%>
  <%else%>
- 
-  <p><%= link_to "ログイン" , new_user_session_path %>
-  <br>したらランキングが見れます</p>
-  <p>未登録の方は<%= link_to "新規登録" , new_user_registration_path %></p>
+ <%=render partial: "login" , locals: { stock: @stock } %>
 <br>
  <div id="side-b">
  <p>やってみたいランキング👑</p>

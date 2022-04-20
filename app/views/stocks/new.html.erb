@@ -1,9 +1,9 @@
-<h2 class="heading06" data-en="routine"><span class="buruburu">✏️　</span>ルーティン作成</h2>
-<ol class="sample1">
-<h4><span class="buruburu">✅　</span>タイトルを入力してください</h4>
+<h2>✏️　ルーティン作成</h2>
+
+<h4>✅タイトルを入力してください</h4>
 <br><%= render 'shared/error_messages', model: @stock %>   
    <%= form_with(model: @stock, local: true) do |f| %>
    <%= f.text_field :title, placeholder: "タイトル" %>
    <%#= f.text_field :"hoge", placeholder: "概要" %>
    <%= f.submit "ルーティン登録" %>
-   <% end %></ol>
+   <% end %>

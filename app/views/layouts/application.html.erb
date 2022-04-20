@@ -86,8 +86,8 @@
                 <% end %>
         </li>
         <li>
-            <%= link_to  user_path(current_user) do%> 
-            <em class="fa-solid fa-star"></em> <span class="iconname">お気に入り</span>
+            <%= link_to  search_stocks_path do%> 
+            <em class="fa-solid fa-magnifying-glass"></em> <span class="iconname">探す</span>
                 <% end %>
         </li>
         <li>
@@ -96,6 +96,10 @@
         </li>
    </ul>
     <%else%> <ul class="menu">
+          <li>
+            <%= link_to root_path do%> <em class="fa-solid fa-house"></em> <span class="iconname">ホーム</span>
+                <%end%>
+        </li>
                                      <li><%= link_to new_user_session_path do %>
                                     <em class="fa-solid fa-person-walking-arrow-right"></em><span class="iconname">ログイン</span>
 
@@ -106,6 +110,11 @@
                                     <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">新規登録</span>
                                        <% end %> 
                                        </li> 
+                                              <li>
+            <%= link_to  search_stocks_path do%> 
+            <em class="fa-solid fa-magnifying-glass"></em> <span class="iconname">探す</span>
+                <% end %>
+        </li>
                                        </ul>
     <% end %>
     <!-- スマホ表示-->
