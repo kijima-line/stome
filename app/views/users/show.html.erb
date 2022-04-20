@@ -36,7 +36,7 @@
 
 
 <div class="mate">
-  <h4><%=@user.name%>さんがやってみたい👍している投稿</h4>
+  <h4><%=@user.name%>さんが👍した投稿</h4>
 <% @user.liked_stocks.each do |stock| %>
 
   <p><%= link_to stock.title,stock_path(stock.id) %> <br>

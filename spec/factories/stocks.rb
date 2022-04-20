@@ -3,5 +3,6 @@ FactoryBot.define do
     title { Faker::Lorem.sentence }
 
     association :user
+    association :stock
   end
 end
