@@ -143,6 +143,19 @@ padding: 4rem 3rem;
     z-index: 1;
     padding: 20px;
 }
+#side-d {
+    width: 18%;
+    height: auto;
+    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
+    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+    color: #111111;
+    position: fixed;
+    bottom:20px;
+    right: 2vh;
+    /* 要素をスクロールに応じて固定 */
+    z-index: 1;
+    padding: 20px;
+}
 a {
     text-decoration: none !important;
 }

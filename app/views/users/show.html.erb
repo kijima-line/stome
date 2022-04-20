@@ -35,20 +35,20 @@
     <% end %>
 
 
-<div class="mate">
-  <h4><%=@user.name%>さんが👍した投稿</h4>
-<% @user.liked_stocks.each do |stock| %>
+<div id="side-d">
+  <h4>最近の👍した投稿</h4>
+  <%# first(n)で最初からの回数を指定する%>
+  <%#=(👍の数) stock.liked_users.count %>　
+<% @user.liked_stocks.first(3).each do |stock| %>
 
-  <p><%= link_to stock.title,stock_path(stock.id) %> <br>
-  　👍総数 (<%= stock.liked_users.count %>)　By<%=link_to stock.user.name,user_path(stock.user.id)%></p>
+  <p><%= link_to stock.title,stock_path(stock.id) %> 
+  　By<%=link_to stock.user.name,user_path(stock.user.id)%></p>
  
 <% end %>
-</div></div>
+</div>
   <%#= 自分のやってみたいした投稿表示 %>
-   <div class='column--r'>
  <div id="side-a">
 <%#= 部分テンプレート%>
 👍総数　<%=@likes_count%>
  <%#= 部分テンプレート%>
  <%#=ユーザーランキング実装予定%>
- </div>  

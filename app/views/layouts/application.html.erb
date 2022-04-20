@@ -26,6 +26,11 @@
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
          <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
         <% if user_signed_in? %>
+                     <li>
+            <%= link_to root_path, class:"btn" do%> <em class="fa-solid fa-house"></em> <span class="iconname">　ホーム</span>
+                <%end%>
+        </li>
+ 
             <li>
                 <%= link_to  user_path(current_user),class:"btn" do%><em class="fa-solid fa-user"></em><span class="iconname">　マイページ</span>
                     <% end %>
@@ -34,6 +39,7 @@
                 <%= link_to  destroy_user_session_path,class:"btn" ,data: {confirm:"ログアウトしますか？"} do%><em class="fa-solid fa-right-from-bracket"></em><span class="iconname">　ログアウト</span>
                     <% end %>
             </li>
+            
             <li>
                 <%= link_to new_stock_path,class:"btn",id: "submit" do%><em class="fa-solid fa-pen"></em><span class="iconname">　作成する</span>
                     <%end%>
