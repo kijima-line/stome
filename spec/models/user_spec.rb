@@ -6,33 +6,31 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     it 'nameが空では登録できない' do
-      binding.pry
-
       @user.name = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include '名前 が入力されていません。'
+      expect(@user.errors.full_messages).to include '名前を入力してください'
     end
 
     it 'emailが空では登録できない' do
       @user.email = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include 'メールアドレス が入力されていません。'
+      expect(@user.errors.full_messages).to include 'メールアドレスを入力してください'
     end
     it 'emailに@が含まれていない場合登録できない' do
       @user.email = 'furima.com'
       @user.valid?
-      expect(@user.errors.full_messages).to include('メールアドレス は有効でありません。')
+      expect(@user.errors.full_messages).to include('メールアドレスは不正な値です')
     end
 
     it 'passwordが空では登録できない' do
       @user.password = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include('パスワード が入力されていません。')
+      expect(@user.errors.full_messages).to include('パスワード確認とパスワードの入力が一致しません')
     end
     it 'password_confirmationが空では登録できない' do
       @user.password_confirmation = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include('パスワード確認 が内容とあっていません。')
+      expect(@user.errors.full_messages).to include('パスワード確認とパスワードの入力が一致しません')
     end
   end
 end
