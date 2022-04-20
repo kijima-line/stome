@@ -2,12 +2,12 @@
 
   <%= notice %>
   <ol class="sample1">
-    <h4><span class="buruburu">✨</span>
-      <%= @stock.title %><span class="buruburu">✨</span></h4>
+    <h4><span>✨</span>
+      <%= @stock.title %><span>✨</span></h4>
     <% if user_signed_in? && current_user.id == @stock.user_id %>
       <%= render partial: "edit" %><br>
         <%= render 'shared/error_messages', model: @mee %> 
-        <span class="buruburu">⚠️ルーティンを入力してください</span>
+        <span>⚠️ルーティンを入力してください</span>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
               <%= f.text_field :text , class: "comment-text"%>
@@ -19,18 +19,21 @@
                     <% end %>
                       <% end %>
                         <% end %>
-                          <%= render partial: "likes/like" , locals: { stock: @stock }%>
   </ol>
   </p>
+  <div class="mate">
   <%= render partial: "mees/new" %>
+  </div>
     <%# 要素 終わり%>
       <% if @mees.length == 0 %>
+      <div class="mate">
         <ol class="sample1">
           <h5>⚠️⚠️こちらはサンプルです</h5>
-          <li>(例)　⏰　7:00　 起床</li>
-          <li>(例)　⏰　7:10　 洗顔</li>
-          <li>(例)　⏰　7:20　 愛犬と散歩</li>
-          <li>(例)　⏰　7:40　 朝食</li>
-          <li>(例)　⏰　7:40　 Eテレを見る</li>
+          <li>⏰　7:00　 起床</li>
+          <li>⏰　7:10　 洗顔</li>
+          <li>⏰　7:20　 愛犬と散歩</li>
+          <li>⏰　7:40　 朝食</li>
+          <li>⏰　7:40　 Eテレを見る</li>
         </ol>
+        </div>
         <% end %>

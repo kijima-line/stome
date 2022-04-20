@@ -51,10 +51,23 @@ padding: 4rem 3rem;
     box-shadow: none;
     transform: translateY(5px);
   }
+  .sample1 li{
+      list-style: none;
+  }
 //ぼかし
 #side-b {
     -ms-filter: blur(6px);
     filter: blur(6px);
+}
+.user1{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    font-size: 12px;
+}
+.user1 p {
+    margin: 0; 
+    padding: 0;
 }
 /* 共通 */
 .header {
@@ -77,7 +90,7 @@ padding: 4rem 3rem;
     display: inline-block; // background: url("http://life-thewild.com/wp-content/uploads/2016/11/bg_sample.jpg") no-repeat;
     // font-size:14px;
     // line-height: 10;
-    width: aucalc(auto - 200px);
+    width: calc(auto - 200px);
     margin: auto;
     position: absolute;
     font-size: 16px;
@@ -195,6 +208,9 @@ display: none !important;
   }
   .menu a span {
     font-size: 10px;
+  }
+  #search-form{
+      display: none;
   }
   }
   
