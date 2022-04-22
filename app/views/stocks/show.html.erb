@@ -1,25 +1,25 @@
-<br>
-
   <%= notice %>
+<div class="mate">
   <ol class="sample1">
     <h4><span>✨</span>
       <%= @stock.title %><span>✨</span></h4>
     <% if user_signed_in? && current_user.id == @stock.user_id %>
       <%= render partial: "edit" %><br>
         <%= render 'shared/error_messages', model: @mee %> 
-        <span>⚠️ルーティンを入力してください</span>
+        <span class="ana-1">⚠️ルーティンを入力してください</span>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
               <%= f.text_field :text , class: "comment-text"%>
                 <%= f.submit "ルーティンを追加", class: "comment-submit" %>
                   <% if @mees.length != 0 %>
                     <p>
-                      <%= link_to "投稿完了" ,root_path ,class:"btn btn-info" ,data: {confirm:"トップページへ移動します"}%>
+                      <%= link_to "投稿完了" ,root_path ,id:"btn" ,data: {confirm:"トップページへ移動します"}%>
                     </p>
                     <% end %>
                       <% end %>
                         <% end %>
   </ol>
+  </div>
   </p>
   <div class="mate">
   <%= render partial: "mees/new" %>
@@ -27,8 +27,9 @@
     <%# 要素 終わり%>
       <% if @mees.length == 0 %>
       <div class="mate">
+      <h3>⚠️⚠️こちらはサンプルです</h3>
         <ol class="sample1">
-          <h5>⚠️⚠️こちらはサンプルです</h5>
+          
           <li>⏰　7:00　 起床</li>
           <li>⏰　7:10　 洗顔</li>
           <li>⏰　7:20　 愛犬と散歩</li>

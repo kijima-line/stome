@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :move_to_index, only: [:new, :show,:index]
   def index
     @users = User.all
     @all_ranks = Stock.find(Like.group(:stock_id).order('count(stock_id) desc').limit(3).pluck(:stock_id))
@@ -17,4 +18,9 @@ class UsersController < ApplicationController
     end
     @stocks = current_user.stocks
   end
+  private
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
 end
+

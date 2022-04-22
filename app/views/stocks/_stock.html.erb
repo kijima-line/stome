@@ -10,7 +10,7 @@
                   <%= link_to '詳細', stock_path(stock.id) %><br>
                     <%end%> <br>
                       <h3>
-                        <%= stock.title %>
+                        <%=link_to stock.title,stock_path(stock.id) %>
                       </h3>
                       <% if user_signed_in?%>
                         <% if user_signed_in? && current_user.id == stock.user_id %>
@@ -32,7 +32,8 @@
   <%end%>
     <% if @stocks.length == 0 %>
 <div class="mate">
-          <p>じゅんいちさんの投稿<br>こちらはサンプルです</p>
+ <h3>⚠️⚠️サンプル⚠️⚠️</h3>
+          <p>じゅんいちさんの投稿</p>
           <h4>夕方ルーティン</h4>
           <p>⏰　18:00 ランニング</p>
           <p>⏰　18:20 シャワー</p>

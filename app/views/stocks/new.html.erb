@@ -1,5 +1,5 @@
 <h2>✏️　ルーティン作成</h2>
-
+<div class="mate">
 <h4>✅タイトルを入力してください</h4>
 <br><%= render 'shared/error_messages', model: @stock %>   
    <%= form_with(model: @stock, local: true) do |f| %>
@@ -7,3 +7,4 @@
    <%#= f.text_field :"hoge", placeholder: "概要" %>
    <%= f.submit "ルーティン登録" %>
    <% end %>
+   </div>

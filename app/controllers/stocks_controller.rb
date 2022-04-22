@@ -1,7 +1,7 @@
 class StocksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_stock, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_stock, only: [:edit, :show, :new]
+  before_action :move_to_index, except: [:index ,:show,:search]
   before_action :set_lank, only: [:index, :new]
 
   def index
