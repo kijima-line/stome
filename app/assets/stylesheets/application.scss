@@ -21,6 +21,34 @@
 @import "font-awesome";
 //この記述にてコントローラーのcssをインポート
 //この記述にてコントローラーのcssをインポート
+/* ボタン本体 */
+.btn-t {
+    display: inline-block;
+    padding: 0.4em 1em;
+    background-color: #e3364a;
+    box-shadow: 0 5px 0 #ca1c30;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 10px;
+  }
+  
+  /* ホバー時 */
+  .btn-t:hover {
+    background-color: #E6A1C0;
+    font-weight: bold;
+    color: #FFF;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  
+  /* クリック時 */
+  .btn-t:active {
+    box-shadow: none;
+    transform: translateY(5px);
+  }
 //ボタン
 .btn-a{
     position:fixed;
@@ -153,7 +181,7 @@ padding: 4rem 3rem;
     bottom:20px;
     right: 2vh;
     /* 要素をスクロールに応じて固定 */
-    z-index: 1;
+    z-index:1;
     padding: 20px;
 }
 a {
@@ -187,6 +215,43 @@ font-size: 2.8rem;
   display: block;
  font-size: 10px;
 }
+
+.search-input{
+    border-radius: 10px;
+    width: 80%;
+    height: 50px;
+  }
+
+  .msr_h105 {
+    border-bottom:1px solid #999999;
+    color: #333;
+    font-size: 20px;
+    margin: 0 0 20px;
+    padding: 0 0 8px;
+  }
+  .user2 {
+    position: relative;/*相対位置*/
+    padding-left: 1.2em;/*アイコン分のスペース*/
+    line-height: 1.4;/*行高*/
+  }
+  
+  .user2:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f4fc";/*アイコンのユニコード*/
+    font-weight: 900;
+    position:absolute;/*絶対位置*/
+    font-size: 0.8em;/*サイズ*/
+
+    color: #5ab9ff; /*アイコン色*/
+    right:-30px;
+    bottom: 0;
+ 
+  }
+.mate {
+    padding: 40px;
+    margin:30px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
 //ここからスマホ表示
 @media ( max-width: 1280px) {
     .flexbox {
@@ -205,13 +270,14 @@ font-size: 2.8rem;
     div#side-a {
         display: none !important;
     }
+    .msr_h105,.mate{
+        font-size : 75% ;
+        margin : 1em 0 0.8em 0 ;
+    }
+
 }
 
-.mate {
-    padding: 40px;
-    margin: 40px;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-}
+
 /*　全てのサイズで読み込まれます　*/
 
 @media screen and (min-width:1024px) {
@@ -225,19 +291,15 @@ display: none !important;
   #search-form{
       display: none;
   }
+  
+  
   }
   
-  @media screen and (min-width:481px) and ( max-width:1023px) {
-  /*　画面サイズが481pxから1023pxまではここを読み込む　*/
+  @media screen and (max-width: 380px) {
   }
   
   @media screen and (min-width:380px) { 
  
   /*　画面サイズが480pxからはここを読み込む　*/
 
-  }
-  .search-input{
-    border-radius: 10px;
-    width: 80%;
-    height: 50px;
   }

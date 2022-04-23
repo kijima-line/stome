@@ -9,7 +9,7 @@
                 <% else %>
                   <%= link_to '詳細', stock_path(stock.id) %><br>
                     <%end%> <br>
-                      <h3>
+                      <h3 class="msr_h105" >
                         <%=link_to stock.title,stock_path(stock.id) %>
                       </h3>
                       <% if user_signed_in?%>
@@ -17,7 +17,7 @@
                           <% end %>
                
                               <% stock.mees.order(published_at: "ASC").each do |m|%>
-                                <p> ⏰
+                                <p class="msr_h105"> ⏰
                                   <%= l m.published_at %> 〜
                                     <%= m.text%><br></p>
                                 <%end%>
