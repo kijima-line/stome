@@ -1,27 +1,29 @@
   <%= notice %>
 <div class="mate">
   <ol class="sample1">
-    <h4><span>✨</span>
-      <%= @stock.title %><span>✨</span></h4>
+    <h4 class="msr_h105"><span>✨</span>
+      <%= @stock.title %><span>✨</span>
+      <% if user_signed_in? && current_user.id == @stock.user_id %>
+      <% if @mees.length != 0 %>
+                      <%= link_to "投稿完了" ,root_path ,class:"btn-t" ,data: {confirm:"トップページへ移動します"}%>
+
+                    <%end%><%end%></h4>
     <% if user_signed_in? && current_user.id == @stock.user_id %>
       <%= render partial: "edit" %><br>
         <%= render 'shared/error_messages', model: @mee %> 
-        <span class="ana-1">⚠️ルーティンを入力してください</span>
+        <p class="msr_h105">⚠️ルーティンを入力してください</p>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
               <%= f.text_field :text , class: "comment-text"%>
                 <%= f.submit "ルーティンを追加", class: "comment-submit" %>
-                  <% if @mees.length != 0 %>
-                    <p>
-                      <%= link_to "投稿完了" ,root_path ,id:"btn" ,data: {confirm:"トップページへ移動します"}%>
-                    </p>
-                    <% end %>
+
+
+
                       <% end %>
                         <% end %>
   </ol>
-  </div>
+ 
   </p>
-  <div class="mate">
   <%= render partial: "mees/new" %>
   </div>
     <%# 要素 終わり%>
@@ -38,3 +40,4 @@
         </ol>
         </div>
         <% end %>
+

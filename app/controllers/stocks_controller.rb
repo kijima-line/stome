@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_stock, only: [:edit, :show, :new]
+  before_action :set_stock, only: [:edit, :show]
   before_action :move_to_index, except: [:index ,:show,:search]
   before_action :set_lank, only: [:index, :new]
 
@@ -14,6 +14,7 @@ class StocksController < ApplicationController
     @stock = Stock.new
     
   end
+
 
   def create
     @stock = Stock.new(stock_params)
@@ -54,6 +55,7 @@ class StocksController < ApplicationController
     # @mees = Mee.search(params[:keyword])
   end
 
+
   private
 
   def stock_params
@@ -71,4 +73,5 @@ class StocksController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
+
 end

@@ -26,6 +26,7 @@
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
          <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
         <% if user_signed_in? %>
+
                      <li>
             <%= link_to root_path, class:"btn" do%> <em class="fa-solid fa-house"></em> <span class="iconname">　ホーム</span>
                 <%end%>
@@ -73,6 +74,7 @@
                         <%= form.text_field :keyword, placeholder: " 検索する", class: "search-input" %>
                             <%= form.submit "検索", class: "search-btn" %>
                                 <% end %>
+
                 </div>
                 <%#=検索窓%>
                     <!-- カラム 3 ここまで -->
@@ -103,6 +105,8 @@
             <%= link_to  destroy_user_session_path, data: {confirm:"ログアウトしますか？"} do%> <em class="fa-solid fa-right-from-bracket"></em><span class="iconname">ログアウト</span>
                 <% end %>
         </li>
+
+
    </ul>
     <%else%> <ul class="menu">
           <li>

@@ -1,10 +1,11 @@
 <ol class="sample1">
-  <h3>ルーティン一覧</h3>
-  <p>ユーザー名　
-    <%= @stock.user.name %>
-  </p>
+  <h3 class="msr_h105">ルーティン一覧　　
+  <span class="user2">
+  <%= @stock.user.name %>
+  </span></h3>
+
   <%if  user_signed_in?%>
-  <% @mees.each do |mees| %>
+  <% @mees.order(published_at: "ASC").each do |mees| %>
     <li> ⏰　
       　<%= l mees.published_at%>　→　
         <%= mees.text%>　
@@ -17,7 +18,4 @@
     <%else%>
     <%= render partial: "stocks/login" , locals: { stock: @stock }%>
     <% end %>
-  
-    
-
 </ol>
