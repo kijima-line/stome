@@ -17,7 +17,7 @@
                           <% end %>
                
                               <% stock.mees.order(published_at: "ASC").each do |m|%>
-                                <p class="msr_h105"> ⏰
+                                <p> ⏰
                                   <%= l m.published_at %> 〜
                                     <%= m.text%><br></p>
                                 <%end%>
