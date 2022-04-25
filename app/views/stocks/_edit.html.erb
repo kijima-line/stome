@@ -1,5 +1,5 @@
 <div class="edit_t">
 <%= form_with(model: @stock) do |f| %>
-<%= f.text_field :title %><%= button_to '削除' ,stock_path(@stock.id),method: :delete ,data: {confirm:"本当に削除しますか？"} %>
+<%= f.text_field :title %><%= link_to '削除' ,stock_path(@stock.id),method: :delete ,data: {confirm:"本当に削除しますか？"} %>
 <%= f.submit "タイトル更新" , id: "submit" ,data: {confirm:"タイトルを更新しますか？"} %>  
 <% end %></div>

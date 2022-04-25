@@ -1,15 +1,15 @@
   <%= notice %>
 <div class="mate">
   <ol class="sample1">
+  <% if user_signed_in? && current_user.id == @stock.user_id %>
+   <% if @mees.length != 0 %>
     <h4 class="msr_h105"><span>✨</span>
-      <%= @stock.title %><span>✨</span>
-      <% if user_signed_in? && current_user.id == @stock.user_id %>
-      <% if @mees.length != 0 %>
-                      <%= link_to "投稿完了" ,root_path ,class:"btn-t" ,data: {confirm:"トップページへ移動します"}%>
-
-                    <%end%><%end%></h4>
+      <%= @stock.title %><span>✨</span> <%= link_to "投稿完了" ,root_path ,class:"btn-t" ,data: {confirm:"トップページへ移動します"}%></h4>
+<%= render partial: "edit" %>
+                    <%end%>
+                    <%end%>
     <% if user_signed_in? && current_user.id == @stock.user_id %>
-      <%= render partial: "edit" %><br>
+      
         <%= render 'shared/error_messages', model: @mee %> 
         <p class="msr_h105">⚠️ルーティンを入力してください</p>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
