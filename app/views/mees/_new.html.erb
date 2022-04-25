@@ -1,37 +1,21 @@
 <ol class="sample1">
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
-<dl>
-  <dt>  <h3 class="msr_h105">ルーティン一覧　　
+  <h3 class="msr_h105">ルーティン一覧　　
   <span class="user2">
   <%= @stock.user.name %>
-  </span></h3></dt>
-  <dd>
-  
-    <ol>
-              <%if  user_signed_in?%>
-  <% @mees.order(published_at: "ASC").each do |mees| %>
-      <li><dl>
-        <dt>
+  </span></h3>
 
-          <%= l mees.published_at%>
-          <span class="material-icons">directions_run</span>
-        </dt>
-        <dd><dl>
-          <dt> <%= mees.text%>
-                    <% if user_signed_in? && current_user.id == @stock.user_id %>
+  <%if  user_signed_in?%>
+  <% @mees.order(published_at: "ASC").each do |mees| %>
+    <li> ⏰　
+      　<%= l mees.published_at%>　→　
+        <%= mees.text%>　
+          <% if user_signed_in? && current_user.id == @stock.user_id %>
             <%= link_to '編集' ,edit_stock_mee_path(@stock,mees.id),method: :get %>　
               <%= link_to "削除",stock_mee_path(@stock,mees.id), method: :delete,data: {confirm:"本当に削除しますか？"}%>
-                <% end %></dt>
-          <dd><%#=メッセージ機能%></dd>
-        </dl></dd>
-      </dl></li>
+                <% end %>
+    </li>
     <% end %>
     <%else%>
     <%= render partial: "stocks/login" , locals: { stock: @stock }%>
     <% end %>
-
-    </ol>
-  </dd>
-</dl>
+</ol>
