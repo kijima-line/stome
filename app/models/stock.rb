@@ -4,6 +4,8 @@ class Stock < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   has_many :mees, dependent: :destroy
+  has_many :comments
+
 
   def self.search(search)
     if search != ''

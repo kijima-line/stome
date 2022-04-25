@@ -7,6 +7,7 @@ class StocksController < ApplicationController
   def index
     @stocks = Stock.order('created_at DESC').includes(:user)
     @mees = Mee.order('published_at ASC').includes(:user)
+    @comments = Comment.order('created_at DESC').includes(:user)
     
   end
 
@@ -48,6 +49,8 @@ class StocksController < ApplicationController
     @mees = @stock.mees.order('published_at ASC').includes(:user)
     @mee = Mee.new
     # like = @stock.likes
+    #@comments = @stock.comments.includes(:user)
+    @comment =Comment.new
   end
 
   def search
