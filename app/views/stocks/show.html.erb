@@ -11,7 +11,8 @@
     <% if user_signed_in? && current_user.id == @stock.user_id %>
       
         <%= render 'shared/error_messages', model: @mee %> 
-        <p class="msr_h105">⚠️ルーティンを入力してください</p>
+        <%= @stock.title %>
+        <p>⚠️ルーティンを入力してください</p>
           <%= form_with model: [@stock, @mee],  method: :post,id: "comment-form" do |f| %>
             <%= f.time_select :published_at,{:minute_step => 5}%>
               <%= f.text_field :text , class: "comment-text"%>
