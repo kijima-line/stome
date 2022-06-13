@@ -11,10 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap.min.css
-// =require_tree .
-// =require_self
+ *= require_self
+ *= require_tree 
  */
-
 
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -23,173 +22,177 @@
 //この記述にてコントローラーのcssをインポート
 /* ボタン本体 */
 .btn-t {
-    display: inline-block;
-    padding: 0.4em 1em;
-    background-color: #e3364a;
-    box-shadow: 0 5px 0 #ca1c30;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s;
-    margin: 10px;
-    font-size: medium;
-  }
-  
-  /* ホバー時 */
-  .btn-t:hover {
-    background-color: #E6A1C0;
-    font-weight: bold;
-    color: #FFF;
-    box-shadow: none;
-    transform: translateY(5px);
-  }
-  
-  /* クリック時 */
-  .btn-t:active {
-    box-shadow: none;
-    transform: translateY(5px);
-  }
-//ボタン
-.btn-a{
-    position:fixed;
-    bottom: 0;
-list-style: none;
-padding: 4rem 3rem;
+  display: inline-block;
+  padding: 0.4em 1em;
+  background-color: #e3364a;
+  box-shadow: 0 5px 0 #ca1c30;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin: 10px;
+  font-size: medium;
 }
-.btn { 
-    width: 100%;
-    margin: 10px;
-    display:block;
-    text-align: left;
-    padding: 1em 2em;
-    background:  #E8630A;
-    box-shadow:  #E8630A; /* 影の太さ・色 */
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none; /* 文字の下線を消す */
-  }
-  .btn:hover {
-    width: 100%;
-    margin: 10px;
-    padding: 1em 2em;
-    background-color: #E6A1C0;
-    font-weight: bold;
-    color: #FFF;
-    box-shadow: none;
-    transform: translateY(5px);
-  }
-  .sample1 li{
-      list-style: none;
-  }
+
+/* ホバー時 */
+.btn-t:hover {
+  background-color: #e6a1c0;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+/* クリック時 */
+.btn-t:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+//ボタン
+.btn-a {
+  position: fixed;
+  bottom: 0;
+  list-style: none;
+  padding: 4rem 3rem;
+}
+.btn {
+  width: 100%;
+  margin: 10px;
+  display: block;
+  text-align: left;
+  padding: 1em 2em;
+  background: #e8630a;
+  box-shadow: #e8630a; /* 影の太さ・色 */
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none; /* 文字の下線を消す */
+}
+.btn:hover {
+  width: 100%;
+  margin: 10px;
+  padding: 1em 2em;
+  background-color: #e6a1c0;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.sample1 {
+  list-style: none;
+  padding-left: 0;
+}
 //ぼかし
 #side-b {
-    -ms-filter: blur(6px);
-    filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
 }
-.user1{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    border: double 5px #4ec4d3;
-    font-size: 12px;
+.user1 {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border: double 5px #4ec4d3;
+  font-size: 12px;
 }
 .user1 p {
-    margin: 0; 
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 /* 共通 */
 .header {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .flexbox {
-    display: flex;
-    justify-content: center;
-    background: #ccc;
-    flex-wrap: wrap;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  background: #ccc;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .main {
-    // width: );
-    margin: 10px 0;
-    text-align: left; 
-    display: inline-block; // background: url("http://life-thewild.com/wp-content/uploads/2016/11/bg_sample.jpg") no-repeat;
-    // font-size:14px;
-    // line-height: 10;
-    width: calc(auto - 200px);
-    margin: auto;
-    position: absolute;
-    font-size: 16px;
-  
+  // width: );
+  margin: 10px 0;
+  text-align: left;
+  display: inline-block; // background: url("http://life-thewild.com/wp-content/uploads/2016/11/bg_sample.jpg") no-repeat;
+  // font-size:14px;
+  // line-height: 10;
+  width: calc(auto - 200px);
+  margin: auto;
+  position: absolute;
+  font-size: 16px;
 }
 
 .side {
-    background: linear-gradient(#05FBFF, #1E00FF);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 40vh;
+  background: linear-gradient(#05fbff, #1e00ff);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 40vh;
 
-    box-sizing: border-box;
-    top: 0px;
-    height: 100%;
-    right: 0;
-    position: fixed;
-    overflow: auto;
+  box-sizing: border-box;
+  top: 0px;
+  height: 100%;
+  right: 0;
+  position: fixed;
+  overflow: auto;
 }
 
 .list {
-    background: linear-gradient(#05FBFF, #1E00FF);
-    width: 45vh;
- 
-    box-sizing: border-box;
-    top: 0px;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    overflow: auto;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  background: linear-gradient(#05fbff, #1e00ff);
+  width: 45vh;
+
+  box-sizing: border-box;
+  top: 0px;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .main,
 .side,
 .list {
-    padding: 2%;
-    border-radius: 10px
+  padding: 2%;
+  border-radius: 10px;
 }
 
 #side-a {
-    width: 18%;
-    height: auto;
-    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
-    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
-    color: #111111;
-    position: fixed;
-    top: 120px;
-    right: 2vh;
-    /* 要素をスクロールに応じて固定 */
-    z-index: 1;
-    padding: 20px;
+  width: 18%;
+  height: auto;
+  box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
+  background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+  color: #111111;
+  position: fixed;
+  top: 120px;
+  right: 2vh;
+  /* 要素をスクロールに応じて固定 */
+  z-index: 1;
+  padding: 20px;
 }
 #side-d {
-    width: 18%;
-    height: auto;
-    box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
-    background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
-    color: #111111;
-    position: fixed;
-    bottom:20px;
-    right: 2vh;
-    /* 要素をスクロールに応じて固定 */
-    z-index:1;
-    padding: 20px;
+  width: 18%;
+  height: auto;
+  box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);
+  background: linear-gradient(-45deg, #ffe388, #fff, #ffe388);
+  color: #111111;
+  position: fixed;
+  bottom: 20px;
+  right: 2vh;
+  /* 要素をスクロールに応じて固定 */
+  z-index: 1;
+  padding: 20px;
 }
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 .menu {
-    margin: 0;
+  margin: 0;
   padding: 0;
   position: fixed;
   left: 0;
@@ -199,111 +202,153 @@ a {
 }
 
 .menu li {
-font-size: 2.8rem;
+  font-size: 2.8rem;
   float: left;
   display: table;
   table-layout: fixed;
-  width:   20%;
+  width: 20%;
   padding: 18px;
   list-style: none;
   text-align: center;
-
-
 }
 
 .menu a span {
-
   display: block;
- font-size: 10px;
+  font-size: 10px;
 }
 
-.search-input{
-    border-radius: 10px;
-    width: 80%;
-    height: 50px;
-  }
+.search-input {
+  border-radius: 10px;
+  width: 80%;
+  height: 50px;
+}
 
-  .msr_h105 {
-    border-bottom:1px solid #999999;
+.msr_h105 {
+  border-top: 4px solid #999999;
+  color: #333;
+  font-size: calc(1.325rem + 0.9vw);
+  margin: 0 0 20px;
+  padding: 7px 0 8px;
+}
+.user2 {
+  position: relative; /*相対位置*/
+  padding-left: 1.2em; /*アイコン分のスペース*/
+  line-height: 1.4; /*行高*/
+}
+
+.user2:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  content: "\f4fc";
+  font-weight: 900;
+  /* position: absolute; */
+  font-size: 0.8em;
+  color: #5ab9ff;
+  /* right: -30px; */
+  bottom: 0;
+  /* margin: 0 -9px;*/
+}
+
+.mate {
+  width: 700px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+//ここからスマホ表示
+@media (max-width: 1280px) {
+  .flexbox {
+    display: -webkit-flex;
+    display: flex;
+  }
+  .main {
+    text-align: left;
+  }
+  .side {
+    display: none;
+  }
+  .list {
+    display: none;
+  }
+  div#side-a,
+  #side-d {
+    display: none !important;
+  }
+  .msr_h105,
+  .mate {
+    width: 100%;
+    font-size: 80%;
+    margin: 1em 0 0.8em 0;
+    border-top: 4px solid #999999;
     color: #333;
     font-size: calc(1.325rem + 0.9vw);
     margin: 0 0 20px;
-    padding: 0 0 8px;
+    padding: 7px 0 8px;
   }
-  .user2 {
-    position: relative;/*相対位置*/
-    padding-left: 1.2em;/*アイコン分のスペース*/
-    line-height: 1.4;/*行高*/
-  }
-  
-  .user2:before {
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    content: "\f4fc";/*アイコンのユニコード*/
-    font-weight: 900;
-    position:absolute;/*絶対位置*/
-    font-size: 0.8em;/*サイズ*/
-
-    color: #5ab9ff; /*アイコン色*/
-    right:-30px;
-    bottom: 0;
- 
-  }
-  
-.mate {
-  width: 700px;
-    padding: 40px;
-    margin:30px;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
-//ここからスマホ表示
-@media ( max-width: 1280px) {
-    .flexbox {
-        display: -webkit-flex;
-        display: flex;
-    }
-    .main {
-        text-align: left;
-    }
-    .side {
-        display: none;
-    }
-    .list {
-        display: none;
-    }
-    div#side-a,#side-d {
-        display: none !important;
-    }
-    .msr_h105,.mate{
-      width: 100%;
-        font-size : 80% ;
-        margin : 1em 0 0.8em 0 ;
-    }
-
-}
-
 
 /*　全てのサイズで読み込まれます　*/
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
   /*　画面サイズが1024pxからはここを読み込む　*/
   .menu {
-display: none !important;
+    display: none !important;
   }
   .menu a span {
     font-size: 10px;
   }
-  #search-form{
-      display: none;
+  #search-form {
+    display: none;
   }
-  
-  
-  }
-  
-  @media screen and (max-width: 380px) {
-  }
-  
-  @media screen and (min-width:380px) { 
- 
-  /*　画面サイズが480pxからはここを読み込む　*/
+}
 
-  }
+@media screen and (max-width: 380px) {
+}
+
+@media screen and (min-width: 380px) {
+  /*　画面サイズが480pxからはここを読み込む　*/
+}
+
+/* モーダルのスタイル */
+.modaloverlay {
+  overflow: auto;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+/* ピックアップするコンテンツのボックス */
+.pickupblock {
+  position: relative;
+}
+
+/* ボタン */
+.bt {
+  position: relative;
+  -webkit-appearance: none;
+  z-index: 15000;
+  border: 1px solid #0044ff;
+  border-radius: 10px;
+  background-color: #0044ff;
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* 説明用テキスト */
+#setsumeitext {
+  position: absolute;
+  z-index: 15000;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #222222;
+  font-weight: bold;
+}
